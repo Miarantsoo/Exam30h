@@ -14,65 +14,76 @@
     }
 
     function colonnesTable ($table){
-        if($table === "admin"){
-            $colonnes = array("idAdmin" , "nom" , "eMail" , "motDePasse");
+        $colonnes = array();
+        $con = PDOConnect();
+
+        $statement = $con->prepare("Show columns from $table");
+        $statement->execute();
+        while($tab = $statement->fetch(PDO::FETCH_OBJ)){
+            $colonnes[] = $tab->Field;
         }
 
-        else if($table === "variete"){
-            $colonnes = array("idVariete" , "nomVariete" , "occupation" , "rendement");
-        }
-
-        else if($table === "parcelle"){
-            $colonnes = array("idParcelle" , "numeroParcelle" , "surface" , "idVariete");
-        }
-
-        else if($table === "genre"){
-            $colonnes = array("idGenre" , "nom");
-        }
-
-        else if($table ==="cueilleur"){
-            $colonnes = array("idCueilleur" , "nom" , "idGenre" , "dateNaissance");
-        }
-
-        else if($table === "categorieDepense"){
-            $colonnes = array("idCategorie" , "categorie");
-        }
-
-        else if($table === "salaireCueilleur"){
-            $colonnes = array("idSalaire" , "idCueilleur" , "montant");
-        }
+        $con = null;
         return $colonnes;
     }
 
     function typeColonnesTable ($table){
-        if($table === "admin"){
-            $colonnes = array("int" , "nom" , "eMail" , "motDePasse");
+        $type = array();
+        $con = PDOConnect();
+
+        $statement = $con->prepare("Show columns from $table");
+        $statement->execute();
+        while($tab = $statement->fetch(PDO::FETCH_OBJ)){
+            $type[] = $tab->Type;
         }
 
-        else if($table === "variete"){
-            $colonnes = array("idVariete" , "nomVariete" , "occupation" , "rendement");
-        }
+        $con = null;
+        return $type;
+    }
 
-        else if($table === "parcelle"){
-            $colonnes = array("idParcelle" , "numeroParcelle" , "surface" , "idVariete");
-        }
+    function insertIntoTable($table , $donnees){
+        $colonnes = colonnesTable($table);
+        $type = typeColonnesTable($table);
 
-        else if($table === "genre"){
-            $colonnes = array("idGenre" , "nom");
+        $requete = "insert into $table (";
+        for($i=0 ; $i<count($colonnes) ; $i++){
+            $requete .= $colonnes[$i];
+            if($i<count($colonnes)-1){
+                $requete .= ", ";
+            }
         }
+        $requete .= ") values (null, ";
 
-        else if($table ==="cueilleur"){
-            $colonnes = array("idCueilleur" , "nom" , "idGenre" , "dateNaissance");
+        for($i=0 ; $i<count($donnees) ; $i++){
+            if(explode("(" , $type[$i+1])[0] =="varchar" || $type[$i+1] == "date"){
+                $requete.="'".$donnees[$i]."'";
+            }
+            else{
+                $requete.="".$donnees[$i];
+            }
+            if($i<count($donnees)-1){
+                $requete .= ", ";
+            }
         }
+        $requete .= ")";
 
-        else if($table === "categorieDepense"){
-            $colonnes = array("idCategorie" , "categorie");
-        }
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+        // echo $requete;
+    }
 
-        else if($table === "salaireCueilleur"){
-            $colonnes = array("idSalaire" , "idCueilleur" , "montant");
-        }
-        return $colonnes;
+    function deleteFromTable ($table , $id){
+        $colonnes = colonnesTable($table);
+
+        $requete = "delete from $table where $colonnes[0] = $id";
+
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+        // echo $requete;
     }
 
     function validationInput($email , $password){
