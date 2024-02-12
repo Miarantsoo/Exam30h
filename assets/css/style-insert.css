@@ -15,7 +15,7 @@
     color: #075811;
     animation: slide-up 0.5s ease;
 }
-input{
+input , select{
     width: 100%;
     padding: 10px;
     margin-bottom: 35px;
@@ -25,4 +25,8 @@ input{
     background-color:rgba(255, 255, 255, 0.4) ;
     position: static;
     display: block;
+}
+
+button{
+
 }

@@ -64,7 +64,7 @@
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-dark mb-4  slideInDown">Cueilleur</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Salaire Cueilleur</h1>
             <nav aria-label="breadcrumb animated slideInDown">
             </nav>
         </div>
@@ -72,19 +72,16 @@
 
     <div class="form-insert">
     <form action="#">
-            <label for="Nom">Nom cueilleur</label>
-            <input type="text" id="nom" name="name" value="" required>
+            <label for="Nom">Non cueilleur</label>
+            <input type="text" id="username" name="username" value="" required>
             <br>
             
-            <label for="occupation">Genre</label>
-            <select id="" name="genre" required>
-                    <option value="male">Homme</option>
-                    <option value="female">Femme</option>
-            </select>
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation" name="occupation" value="" required>
             <br>
 
-            <label for="date">Date de naissance</label>
-                <input type="date" id="dtn" name="date" value="" required>
+            <label for="rendement">Rendement</label>
+            <input type="text" id="password" name="rendement" value="" required>
             <br>
 
             <button type="submit">Inserer</button>

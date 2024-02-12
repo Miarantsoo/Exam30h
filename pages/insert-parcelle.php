@@ -76,8 +76,11 @@
             <label for="occupation">Surface</label>
             <input type="text" id="occupation" name="occupation" value="" required>
 
-            <label for="rendement">Variete</label>
-            <input type="text" id="variete" name="variete" value="" required>
+            <label for="variete">Variete</label>
+            <select id="" name="variete" required>
+                    <option value="male">variete1</option>
+                    <option value="female">variete2</option>
+            </select>
 
             <button type="submit">Inserer</button>
     </form>
