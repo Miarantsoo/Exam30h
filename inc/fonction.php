@@ -86,6 +86,13 @@
         // echo $requete;
     }
 
+    function updateTable ($table , $id , $donnees){
+        $colonnes = colonnesTable($table);
+        $type = typeColonnesTable($table);
+        $requete = "update $table set ";
+
+    }
+
     function validationInput($email , $password){
         if(empty($email) || empty($password)){
             return 0;
