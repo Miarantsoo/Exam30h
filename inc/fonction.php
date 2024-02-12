@@ -13,4 +13,22 @@
         return $res;
     }
 
+    function verification ($email , $password){
+        $requete = "select * from user where eMail = :eMail and motDePasse = SHA(:password)";
+
+        $pdo = PDOConnect();
+
+        $statement = $pdo->prepare($requete);
+        $statement->bindParam(':eMail' , $email);
+        $statement->bindParam(':password' , $password);
+
+        $statement->execute();
+
+        $resultats = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $pdo = null;
+
+        return $resultats;
+    }
+
 ?>
