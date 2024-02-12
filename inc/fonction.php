@@ -174,7 +174,7 @@
         }
 
         $con = null;
-        echo $val;
+        // echo $val;
         return $val; 
     }
 
@@ -213,7 +213,7 @@
 
         $val = $val/$poid;
 
-        echo $val;
+        // echo $val;
         return $val;
     }
 ?>

@@ -111,17 +111,17 @@
             <table>
                     <thead>
                         <tr>
-                            <th>Nom variete</th>
-                            <th>Occupation</th>
-                            <th>Rendement</th>
-                            <th>Acitons</th>
+                            <th>Nom Cueilleur</th>
+                            <th>Genre</th>
+                            <th>Date de Naissance</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Nom1</td>
                             <td>Occupation1</td>
-                            <td>Rendement1</td>
+                            <td>1999-02-15</td>
                             <td>
                                 <a href="" class="bi bi-trash" id="icon"></a>
                                 &nbsp; &nbsp;  &nbsp;

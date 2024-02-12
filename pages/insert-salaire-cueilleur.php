@@ -107,17 +107,17 @@
         <table>
         <thead>
             <tr>
-                <th>Nom variete</th>
-                <th>Occupation</th>
-                <th>Rendement</th>
+                <th>Nom Cueilleur</th>
+                <th>Montant</th>
+                <!-- <th>Rendement</th> -->
                 <th>Acitons</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Nom1</td>
-                <td>Occupation1</td>
-                <td>Rendement1</td>
+                <td>20000</td>
+                <!-- <td>Rendement1</td> -->
                 <td>
                     <a href="" class="bi bi-trash" id="icon"></a>
                     &nbsp; &nbsp;  &nbsp;
