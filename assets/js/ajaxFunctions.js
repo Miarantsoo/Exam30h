@@ -1,4 +1,4 @@
-function fetchData (fileName) {
+export function fetchData (fileName) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
@@ -13,31 +13,31 @@ function fetchData (fileName) {
             }
         }
 
-        xhr.open("GET", "traitement/"+fileName);
+        xhr.open("GET", "treatments/"+fileName);
         xhr.send(null);
     });
 }
 
-function submitData(data, fileName){
-        let xhr = new XMLHttpRequest();
+export function submitData(data, fileName){
+    let xhr = new XMLHttpRequest();
 
-        const formData = new FormData(data);
+    const formData = new FormData(data);
 
-        console.log(formData);
-        xhr.onload = e => {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    $msg = (e.target.responseText != "") ? e.target.responseText : "OK";
-                    console.log($msg);
-                }
+    console.log(formData);
+    xhr.onload = e => {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                $msg = (e.target.responseText != "") ? e.target.responseText : "OK";
+                console.log($msg);
             }
         }
+    }
 
-        xhr.open("POST", "traitement/"+fileName);
-        xhr.send(formData);
+    xhr.open("POST", "treatments/"+fileName);
+    xhr.send(formData);
 }
 
-function submitThenFetchData (data, fileName){
+export function submitThenFetchData (data, fileName){
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
 
@@ -56,7 +56,7 @@ function submitThenFetchData (data, fileName){
             }
         }
 
-        xhr.open("POST", "traitement/"+fileName);
+        xhr.open("POST", "treatments/"+fileName);
         xhr.send(formData);
     });
 }

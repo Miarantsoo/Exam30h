@@ -1,8 +1,13 @@
+create database exam30h;
+
+use exam30h
+
+
 create table leaf_admin (
     idAdmin int auto_increment,
     nom varchar(50) , 
     eMail varchar(50) , 
-    motDePasse varchar(50),
+    motDePasse varchar(64),
     primary key(idAdmin)
 )engine=innoDB;
 
@@ -51,3 +56,5 @@ create table leaf_salaireCueilleur (
     primary key (idSalaire),
     foreign key (idCueilleur) references leaf_cueilleur(idCueilleur)
 )engine=innoDB;
+
+INSERT INTO leaf_admin VALUES(null, "Armand", "armand55@itu.mg", sha2("haha", 256));

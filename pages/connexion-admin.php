@@ -32,7 +32,7 @@
 <body>
     <div class="login-container">
         <h2>Connexion Admin</h2>
-        <form action="#">
+        <form id="form-admin">
             <label for="username">E-mail</label>
             <input type="email" id="username" name="username" value="" required>
             
@@ -45,5 +45,6 @@
 
         </form>
     </div>
+<script type="module" src="../assets/js/script.js"></script>
 </body>
 </html>

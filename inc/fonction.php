@@ -104,14 +104,13 @@
     }
 
     function verificationAdmin($email , $password){
-        $res = array();
         $con = PDOConnect();
-        $stmt = $con->query("SELECT * FROM leaf_admin where eMail = '".$email."' and motDePasse = SHA(".$password.")");
+        $stmt = $con->query("SELECT * FROM leaf_admin where eMail = '".$email."' and motDePasse = SHA2(".$password.", 256)");
         while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
-            $res[] = $tab;
+            $res = $tab;
         }
         $con = null;
-        return $res[0];
+        return $res;
     }
 
     function verification ($email , $password){
