@@ -102,8 +102,6 @@
   <div class="row mt-4">
     <div class="col-md-6">
       <h2>Global</h2>
-      <p>Date de début: <h4>01/01/2024</h4></p>
-      <p>Date de fin: <h4>31/12/2024</h4></p>
       <p>Poids total de la cueillette: <h4>500 kg</h4></p>
       <p>Poids restant sur les parcelles à la date de fin: <h4>200 kg</h4></p>
       <p>Coût de revient par kg: <h4> $2.50</h4></p>
@@ -111,16 +109,6 @@
   </div>
 </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/lib/wow/wow.min.js"></script>
-    <script src="../assets/lib/easing/easing.min.js"></script>
-    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="../assets/js/main.js"></script>
     <footer>
         <div class="container-fluid copyright py-4">
             <div class="container">
@@ -132,5 +120,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/wow/wow.min.js"></script>
+    <script src="../assets/lib/easing/easing.min.js"></script>
+    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
