@@ -42,6 +42,7 @@
             <button type="submit">Se Connecter</button>
 
             <p><a href="connexion_admin.php">Se connecter en tant qu'admin</a></p>
+            <p> Pas encore de compte <a href="inscription.php">Creer ici</a></p>
 
         </form>
     </div>
