@@ -51,7 +51,7 @@
                                 <a href="insert-parcelle.php" class="dropdown-item">Parcelle</a>
                                 <a href="insert-cueilleur.php" class="dropdown-item">Cueilleur</a>
                                 <a href="insert-categorie.php" class="dropdown-item">Categorie de depenses</a>
-                                <a href="insert-categorie.php" class="dropdown-item">Salaire Cueilleur</a>
+                                <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
                     </div>
@@ -74,18 +74,14 @@
     <div class="form-insert">
     <form action="#">
             <label for="Nom">Non cueilleur</label>
-            <input type="text" id="username" name="username" value="" required>
+            <select id="" name="namecueilleur" required>
+                    <option value="">cueilleur1</option>
+                    <option value="">cueilleur2</option>
+            </select>
             <br>
             
-            <label for="occupation">Occupation</label>
+            <label for="montant">Montant salaire</label>
             <input type="text" id="occupation" name="occupation" value="" required>
-            <br>
-
-            <label for="rendement">Rendement</label>
-            <select id="" name="rendement" required>
-                    <option value="">rendement1</option>
-                    <option value="">rendement2</option>
-            </select>
             <br>
 
             <button type="submit">Inserer</button>
@@ -117,12 +113,12 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../assets/lib/wow/wow.min.js"></script>
+    <script src="../assets/lib/easing/easing.min.js"></script>
+    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

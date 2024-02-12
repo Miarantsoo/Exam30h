@@ -24,7 +24,7 @@
     <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="../assets/css/style-connexion.css" rel="stylesheet">
@@ -43,7 +43,6 @@
 
             <p><a href="connexion_admin.php">Se connecter en tant qu'admin</a></p>
             <p> Pas encore de compte ?<a href="inscription.php">Créer ici</a></p>
-
         </form>
     </div>
 </body>
