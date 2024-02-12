@@ -41,7 +41,7 @@
 
             <button type="submit">Se Connecter</button>
 
-            <p><a href="index.html">Se connecter en tant qu'utilisateur</a></p>
+            <p><a href="index.php">Se connecter en tant qu'utilisateur</a></p>
 
         </form>
     </div>
