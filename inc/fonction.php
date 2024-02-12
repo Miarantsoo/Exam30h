@@ -174,14 +174,14 @@
         }
 
         $con = null;
-        // echo $val;
+        echo $val;
         return $val; 
     }
 
     function poidRestantParcelles($date){
         $somme = 0;
         $split  = explode("-" , $date);
-        $debut = $split[0].$split[1]."01";
+        $debut = $split[0]."-".$split[1]."-"."01";
         $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$debut' and dateCueillette<='$date' group by numeroParcelle limit 1";
         
         $val = array();
@@ -194,7 +194,7 @@
         }
 
         $con = null;
-        // echo $val;
+        // echo $somme;
         return $somme; 
     }
 
@@ -212,7 +212,8 @@
         $poid = poidTotalCueillette($debut , $fin);
 
         $val = $val/$poid;
-        
+
+        echo $val;
         return $val;
     }
 ?>
