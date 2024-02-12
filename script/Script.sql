@@ -5,6 +5,7 @@ create table leaf_admin (
     motDePasse varchar(64),
     primary key(idAdmin)
 )engine=innoDB;
+insert into leaf_admin values (null , 'Jean' , 'jean@gmail.com' , SHA2('0000' , 256));
 
 create table leaf_variete (
     idVariete int auto_increment,
@@ -13,6 +14,7 @@ create table leaf_variete (
     rendement decimal(11,2),
     primary key(idVariete)
 )engine=innoDB;
+insert into leaf_variete values (null , 'variete1' , 1.8 , 2);
 
 create table leaf_parcelle (
     idParcelle int auto_increment,
@@ -22,6 +24,7 @@ create table leaf_parcelle (
     primary key(idParcelle),
     foreign key(idVariete) references leaf_variete(idVariete)
 )engine=innoDB;
+insert into leaf_parcelle values (null , 2362 , 2 , 1);
 
 create table leaf_genre (
     idGenre int auto_increment,
@@ -37,6 +40,7 @@ create table leaf_cueilleur (
     primary key(idCueilleur),
     foreign key(idGenre) references leaf_genre(idGenre)
 )engine=innoDB;
+insert into leaf_cueilleur values (null , 'jeannot' , 1 , '1999-06-15');
 
 create table leaf_categorieDepense (
     idCategorie int auto_increment,
@@ -51,6 +55,67 @@ create table leaf_salaireCueilleur (
     primary key (idSalaire),
     foreign key (idCueilleur) references leaf_cueilleur(idCueilleur)
 )engine=innoDB;
+
+create table leaf_user (
+    idUser int auto_increment,
+    nom varchar(50) , 
+    eMail varchar(50) , 
+    motDePasse varchar(64),
+    primary key(idUser)
+)engine=innoDB;
+
+create table leaf_cueillette (
+    idCueillette int auto_increment,
+    dateCueillette date,
+    idCueilleur int,
+    numeroParcelle int,
+    poidCueilli decimal(11,2),
+    primary key(idCueillette),
+    foreign key (idCueilleur) references leaf_cueilleur(idCueilleur),
+    foreign key (numeroParcelle) references leaf_parcelle(numeroParcelle),
+    constraint nonNull check (poidCueilli>0)
+)engine=innoDB;
+insert into leaf_cueillette values (null , '2024-02-12' , 1 , 2362 , 50);
+
+create table leaf_depense(
+    idDepense int auto_increment,
+    dateDepense date,
+    idCategorie int,
+    montant decimal(11,2),
+    primary key(idDepense),
+    foreign key(idCategorie) references leaf_categorieDepense(idCategorie)
+);
+
+
+create or replace view v_leaf_infoParcelle as
+select 
+    leaf_parcelle.idParcelle,
+    leaf_parcelle.numeroParcelle,
+    (leaf_parcelle.surface*10000) as surface,
+    leaf_variete.occupation,
+    leaf_variete.rendement,
+    Floor(((leaf_parcelle.surface*10000)/leaf_variete.occupation)*leaf_variete.rendement) as poid
+from leaf_parcelle
+join leaf_variete 
+    on leaf_parcelle.idVariete = leaf_variete.idVariete;
+
+
+create or replace view v_leaf_sommePoidCueilliParcelle as
+select 
+    sum(leaf_cueillette.poidCueilli) as sommePoid,
+    leaf_cueillette.numeroParcelle, 
+    leaf_cueillette.dateCueillette
+from leaf_cueillette group by numeroParcelle,year(leaf_cueillette.dateCueillette),month(leaf_cueillette.dateCueillette);
+
+
+create or replace view v_leaf_poidRestantPercelle as
+select
+    v_leaf_infoParcelle.numeroParcelle ,
+    (v_leaf_infoParcelle.poid-v_leaf_sommePoidCueilliParcelle.sommePoid) as difference,
+    v_leaf_sommePoidCueilliParcelle.dateCueillette
+from v_leaf_infoParcelle
+join v_leaf_sommePoidCueilliParcelle on v_leaf_infoParcelle.numeroParcelle = v_leaf_sommePoidCueilliParcelle.numeroParcelle;
+
 
 create or replace view v_leaf_parcelle as
 select 
@@ -82,3 +147,26 @@ select
 from leaf_salaireCueilleur 
 join leaf_cueilleur 
     on leaf_salaireCueilleur.idCueilleur = leaf_cueilleur.idCueilleur;
+
+
+create or replace view v_leaf_cueillette as
+select 
+    leaf_cueillette.idCueillette,
+    leaf_cueillette.dateCueillette,
+    leaf_cueilleur.nom,
+    leaf_parcelle.numeroParcelle,
+    leaf_cueillette.poidCueilli
+from leaf_cueillette 
+join leaf_cueilleur 
+    on leaf_cueillette.idCueilleur = leaf_cueilleur.idCueilleur
+join leaf_parcelle on leaf_cueillette.numeroParcelle = leaf_parcelle.numeroParcelle;
+
+
+create or replace view v_leaf_depense as
+select 
+    leaf_depense.idDepense,
+    leaf_depense.dateDepense,
+    leaf_categorieDepense.categorie,
+    leaf_depense.montant
+from leaf_depense
+join leaf_categorieDepense on leaf_depense.idCategorie = leaf_categorieDepense.idCategorie;

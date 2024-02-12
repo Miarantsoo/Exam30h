@@ -162,4 +162,43 @@
         $con = null;
         return $res[0];
     }
+
+    function poidTotalCueillette ($debut , $fin){
+        $val = 0;
+        $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$debut' and dateCueillette<='$fin'";
+        $con = PDOConnect();
+
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $val += $tab->somme; 
+        }
+
+        $con = null;
+        // echo $val;
+        return $val; 
+    }
+
+    function poidRestantParcelles($date){
+        $somme = 0;
+        $split  = explode("-" , $date);
+        $debut = $split[0].$split[1]."01";
+        $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$debut' and dateCueillette<='$date' group by numeroParcelle limit 1";
+        
+        $val = array();
+        $con = PDOConnect();
+
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $somme += $tab->difference; 
+            $val[] = $tab; 
+        }
+
+        $con = null;
+        // echo $val;
+        return $somme; 
+    }
+
+    function coutDeRevient ($debut , $fin){
+        
+    }
 ?>
