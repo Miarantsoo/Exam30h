@@ -92,7 +92,23 @@
   </div>
 </div>
 
+
 <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+</div>
+
+<div class="container mt-5">
+  <h1>Résultats de la Récolte</h1>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h2>Global</h2>
+      <p>Date de début: <h4>01/01/2024</h4></p>
+      <p>Date de fin: <h4>31/12/2024</h4></p>
+      <p>Poids total de la cueillette: <h4>500 kg</h4></p>
+      <p>Poids restant sur les parcelles à la date de fin: <h4>200 kg</h4></p>
+      <p>Coût de revient par kg: <h4> $2.50</h4></p>
+    </div>
+  </div>
 </div>
 
     <!-- JavaScript Libraries -->
