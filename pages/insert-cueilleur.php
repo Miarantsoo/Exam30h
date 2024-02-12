@@ -70,10 +70,6 @@
         </div>
     </div>
 
-    nom varchar(50),
-    idGenre int,
-    dateNaissance date,
-
     <div class="form-insert">
     <form action="#">
             <label for="Nom">Nom cueilleur</label>
