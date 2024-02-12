@@ -79,7 +79,7 @@
             </div>
             <form action="#">
                     <label for="Nom">Nom categorie</label>
-                    <input type="text" id="categorie" name="categorie" value="" require
+                    <input type="text" id="categorie" name="categorie" value="" require>
                     <button type="submit">Inserer</button>
             </form>
         </div>
