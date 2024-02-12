@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <title>Tea House - Tea Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../assets/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,7 @@
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style-insert.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid bg-white sticky-top" style="top: -150px;">
@@ -40,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil_admin.php" class="nav-item nav-link active">Home</a>
+                        <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
@@ -49,6 +50,7 @@
                                 <a href="insert-parcelle.php" class="dropdown-item">Parcelle</a>
                                 <a href="insert-cueilleur.php" class="dropdown-item">Cueilleur</a>
                                 <a href="insert-categorie.php" class="dropdown-item">Categorie de depenses</a>
+                                <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
                     </div>
@@ -69,6 +71,9 @@
     </div>
 
     <div class="form-insert">
+    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="display-6">Insert parcelle</h1>
+    </div>
     <form action="#">
             <label for="Nom">Numero parcelle</label>
             <input type="number" id="numero" name="numero" value="" required>
@@ -86,6 +91,9 @@
     </form>
     </div>
 
+    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="display-6">Liste parcelle</h1>
+    </div>
     <table border='1'>
         <thead>
             <tr>
@@ -101,8 +109,8 @@
                 <td>Surface1</td>
                 <td>Variete1</td>
                 <td>
-                    <a href="" class="glyphicon glyphicon-trash" id="icon"></a>
-                    <a href="" class="glyphicon glyphicon-pencil" id="icon"></a>
+                    <a href="" class="bi bi-trash" id="icon"></a>
+                    <a href="" class="bi bi-pencil" id="icon"></a>
                 </td>
             </tr>
         </tbody>
@@ -111,12 +119,23 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../assets/lib/wow/wow.min.js"></script>
+    <script src="../assets/lib/easing/easing.min.js"></script>
+    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
+<footer>
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-end">
+                    © ETU 002669
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

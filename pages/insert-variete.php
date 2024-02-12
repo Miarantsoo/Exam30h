@@ -65,7 +65,7 @@
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-dark mb-4  slideInDown">Salaire Cueilleur</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Variete</h1>
             <nav aria-label="breadcrumb animated slideInDown">
             </nav>
         </div>
@@ -73,18 +73,19 @@
 
     <div class="form-insert">
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Insert salaire cueilleur</h1>
+        <h1 class="display-6">Insert variete</h1>
     </div>
     <form action="#">
-            <label for="Nom">Non cueilleur</label>
-            <select id="" name="namecueilleur" required>
-                    <option value="">cueilleur1</option>
-                    <option value="">cueilleur2</option>
-            </select>
+            <label for="Nom">Nom variete</label>
+            <input type="text" id="username" name="username" value="" required>
             <br>
             
-            <label for="montant">Montant salaire</label>
+            <label for="occupation">Occupation</label>
             <input type="text" id="occupation" name="occupation" value="" required>
+            <br>
+
+            <label for="rendement">Rendement</label>
+            <input type="text" id="password" name="rendement" value="" required>
             <br>
 
             <button type="submit">Inserer</button>
@@ -92,7 +93,7 @@
     </div>
 
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Liste salaire cueilleur</h1>
+        <h1 class="display-6">Liste variete</h1>
     </div>
 
     <table border='1'>
