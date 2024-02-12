@@ -8,7 +8,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../assets/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +20,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style-insert.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container-fluid bg-white sticky-top" style="top: -150px;">
@@ -40,18 +42,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
+                        <a href="acceuil-utilisateur.php" class="nav-item nav-link active">Home</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages de saisie</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
-                                <a href="insert-variete.php" class="dropdown-item">Variete</a>
-                                <a href="insert-parcelle.php" class="dropdown-item">Parcelle</a>
-                                <a href="insert-cueilleur.php" class="dropdown-item">Cueilleur</a>
-                                <a href="insert-categorie.php" class="dropdown-item">Categorie de depenses</a>
-                                <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
+                                <a href="saisie-cueillette.php" class="dropdown-item">Cueillettes</a>
+                                <a href="saisie-depense.php" class="dropdown-item">Depenses</a>
                             </div>
                         </div>
+                        <a href="#" class="nav-item nav-link">Resultat</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
                         <a href="" class="fas fa-times" id="icon"></a>
@@ -60,11 +59,46 @@
             </nav>
         </div>
     </div>
+
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">Leaf</strong></p>
-            <h1 class="display-1 text-dark mb-4 animated zoomIn">Home Admin</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Cueillette</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+            </nav>
         </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+        <div class="form-insert">
+            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+            <h1 class="display-6">Saisie Dépenses</h1>
+            </div>
+            <form action="#" class="mt-4">
+            <div class="mb-3">
+                <label for="Date">Date cueillette</label>
+                <input type="date" id="" name="date" value="" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="Cueilleur">Choix cueilleur</label>
+                <select id="" name="choix-cueilleur" required>
+                    <option value="">cueilleur1</option>
+                    <option value="">cueilleur2</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="poid">Poids cueilli</label>
+                <input type="text" id="" name="poids" required>
+            </div>
+
+            <button type="submit">Valider</button>
+            </form>
+        </div>
+        </div>
+    </div>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -83,7 +117,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end">
-                    © ETU 002779 - ETU 002362 - ETU 002669
+                © ETU 002779 - ETU 002362 - ETU 002669
                 </div>
             </div>
         </div>

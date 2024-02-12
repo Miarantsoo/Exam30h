@@ -14,7 +14,6 @@
     position: relative;
     color: #075811;
     animation: slide-up 0.5s ease;
-    margin-left: 200px;
 }
 
 input, select{
@@ -30,9 +29,8 @@ input, select{
 }
 
 table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
-    margin-top: 20px;
     margin: 20px;
     margin-left: 50px;
     margin-right: 50px;
@@ -49,7 +47,7 @@ th {
 }
 
 button{
-    background-color:#85ab37;
+    background-color:#9ccb3c;
     color: #fff;
     padding: 15px 34px;
     margin-left: 10px;
