@@ -49,19 +49,19 @@
             </div>
 
             <div class="step" id="step2" style="display: none;">
+                <label for="gender">Genre</label>
+                
+                <select id="gender" name="gender" required>
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                    <option value="other">Autre</option>
+                </select>
 
                 <label for="email">Adresse e-mail</label>
                 <input type="email" id="email" name="email" required>
 
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" required>
-
-                <label for="gender">Genre</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Homme</option>
-                    <option value="female">Femme</option>
-                    <option value="other">Autre</option>
-                </select>
 
                 <button type="button" onclick="beforeStep(1)">Precedent</button>
                 <button type="submit">S'Inscrire</button>
