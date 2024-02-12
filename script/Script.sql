@@ -47,6 +47,7 @@ create table leaf_categorieDepense (
     categorie varchar(50),
     primary key (idCategorie)
 )engine=innoDB;
+insert into leaf_categorieDepense values (null , 'engrais');
 
 create table leaf_salaireCueilleur (
     idSalaire int auto_increment,
@@ -55,6 +56,7 @@ create table leaf_salaireCueilleur (
     primary key (idSalaire),
     foreign key (idCueilleur) references leaf_cueilleur(idCueilleur)
 )engine=innoDB;
+insert into leaf_salaireCueilleur values (null , 1 , 500);
 
 create table leaf_user (
     idUser int auto_increment,
@@ -85,6 +87,7 @@ create table leaf_depense(
     primary key(idDepense),
     foreign key(idCategorie) references leaf_categorieDepense(idCategorie)
 );
+insert into leaf_depense values (null , '2024-02-12' , 1 , 300);
 
 
 create or replace view v_leaf_infoParcelle as
