@@ -31,7 +31,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Connexion</h2>
+        <h2>Connexion Admin</h2>
         <form action="#">
             <label for="username">E-mail</label>
             <input type="email" id="username" name="username" value="" required>
