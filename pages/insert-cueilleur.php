@@ -51,6 +51,7 @@
                                 <a href="insert-parcelle.php" class="dropdown-item">Parcelle</a>
                                 <a href="insert-cueilleur.php" class="dropdown-item">Cueilleur</a>
                                 <a href="insert-categorie.php" class="dropdown-item">Categorie de depenses</a>
+                                <a href="insert-categorie.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
                     </div>

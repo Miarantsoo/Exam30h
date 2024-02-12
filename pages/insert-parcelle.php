@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <title>Tea House - Tea Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -20,13 +20,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style-insert.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid bg-white sticky-top" style="top: -150px;">
@@ -49,6 +50,7 @@
                                 <a href="insert-parcelle.php" class="dropdown-item">Parcelle</a>
                                 <a href="insert-cueilleur.php" class="dropdown-item">Cueilleur</a>
                                 <a href="insert-categorie.php" class="dropdown-item">Categorie de depenses</a>
+                                <a href="insert-categorie.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
                     </div>
