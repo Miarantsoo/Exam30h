@@ -78,17 +78,13 @@
 
             <label for="variete">Variete</label>
             <select id="" name="variete" required>
-                    <option value="male">variete1</option>
-                    <option value="female">variete2</option>
+                    <option value="">variete1</option>
+                    <option value="">variete2</option>
             </select>
 
             <button type="submit">Inserer</button>
     </form>
     </div>
-
-    numeroParcelle int unique,
-    surface decimal(11 , 2),
-    idVariete int,
 
     <table border='1'>
         <thead>
@@ -96,6 +92,7 @@
                 <th>Numero Parcelle</th>
                 <th>Surface</th>
                 <th>Variete</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>

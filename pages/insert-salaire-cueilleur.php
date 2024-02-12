@@ -81,7 +81,10 @@
             <br>
 
             <label for="rendement">Rendement</label>
-            <input type="text" id="password" name="rendement" value="" required>
+            <select id="" name="rendement" required>
+                    <option value="">rendement1</option>
+                    <option value="">rendement2</option>
+            </select>
             <br>
 
             <button type="submit">Inserer</button>
