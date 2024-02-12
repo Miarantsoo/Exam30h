@@ -32,7 +32,7 @@
 <body>
     <div class="login-container">
         <h2>Connexion Utilisateur</h2>
-        <form action="#">
+        <form action="testFonction.php">
             <label for="username">E-mail</label>
             <input type="email" id="username" name="username" value="" required>
             

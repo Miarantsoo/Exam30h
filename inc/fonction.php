@@ -14,73 +14,126 @@
     }
 
     function colonnesTable ($table){
-        if($table === "admin"){
-            $colonnes = array("idAdmin" , "nom" , "eMail" , "motDePasse");
+        $colonnes = array();
+        $con = PDOConnect();
+
+        $statement = $con->prepare("Show columns from $table");
+        $statement->execute();
+        while($tab = $statement->fetch(PDO::FETCH_OBJ)){
+            $colonnes[] = $tab->Field;
         }
 
-        else if($table === "variete"){
-            $colonnes = array("idVariete" , "nomVariete" , "occupation" , "rendement");
-        }
-
-        else if($table === "parcelle"){
-            $colonnes = array("idParcelle" , "numeroParcelle" , "surface" , "idVariete");
-        }
-
-        else if($table === "genre"){
-            $colonnes = array("idGenre" , "nom");
-        }
-
-        else if($table ==="cueilleur"){
-            $colonnes = array("idCueilleur" , "nom" , "idGenre" , "dateNaissance");
-        }
-
-        else if($table === "categorieDepense"){
-            $colonnes = array("idCategorie" , "categorie");
-        }
-
-        else if($table === "salaireCueilleur"){
-            $colonnes = array("idSalaire" , "idCueilleur" , "montant");
-        }
+        $con = null;
         return $colonnes;
     }
 
     function typeColonnesTable ($table){
-        if($table === "admin"){
-            $colonnes = array("int" , "nom" , "eMail" , "motDePasse");
+        $type = array();
+        $con = PDOConnect();
+
+        $statement = $con->prepare("Show columns from $table");
+        $statement->execute();
+        while($tab = $statement->fetch(PDO::FETCH_OBJ)){
+            $type[] = $tab->Type;
         }
 
-        else if($table === "variete"){
-            $colonnes = array("idVariete" , "nomVariete" , "occupation" , "rendement");
+        $con = null;
+        return $type;
+    }
+
+    function insertIntoTable($table , $donnees){
+        $colonnes = colonnesTable($table);
+        $type = typeColonnesTable($table);
+
+        $requete = "insert into $table (";
+        for($i=0 ; $i<count($colonnes) ; $i++){
+            $requete .= $colonnes[$i];
+            if($i<count($colonnes)-1){
+                $requete .= ", ";
+            }
+        }
+        $requete .= ") values (null, ";
+
+        for($i=0 ; $i<count($donnees) ; $i++){
+            if($colonnes[$i+1] == "motDePasse"){
+                $requete.="SHA2('".$donnees[$i]."' , 256)";
+            }
+            else if(explode("(" , $type[$i+1])[0] =="varchar" || $type[$i+1] == "date"){
+                $requete.="'".$donnees[$i]."'";
+            }
+            else{
+                $requete.="".$donnees[$i];
+            }
+            if($i<count($donnees)-1){
+                $requete .= ", ";
+            }
+        }
+        $requete .= ")";
+
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+        // echo $requete;
+    }
+
+    function deleteFromTable ($table , $id){
+        $colonnes = colonnesTable($table);
+
+        $requete = "delete from $table where $colonnes[0] = $id";
+
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+        // echo $requete;
+    }
+
+    function updateTable ($table , $id , $donnees){
+        $colonnes = colonnesTable($table);
+        $type = typeColonnesTable($table);
+        $requete = "update $table set ";
+
+        for($i=0 ; $i<count($donnees) ; $i++){
+            if(explode("(" , $type[$i+1])[0] =="varchar" || $type[$i+1] == "date"){
+                $requete.=$colonnes[$i+1]." = '".$donnees[$i]."'";
+            }
+            else{
+                $requete .= $colonnes[$i+1]." = ".$donnees[$i];
+            }
+            if($i<count($donnees)-1){
+                $requete .= ", ";
+            }
         }
 
-        else if($table === "parcelle"){
-            $colonnes = array("idParcelle" , "numeroParcelle" , "surface" , "idVariete");
-        }
+        $requete .= " where $colonnes[0] = $id";
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+        // echo $requete;
+    }
 
-        else if($table === "genre"){
-            $colonnes = array("idGenre" , "nom");
+    function selectFromTable ($table){
+        $res = array();
+        $con = PDOConnect();
+        $stmt = $con->query("SELECT * FROM $table");
+        while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $res[] = $tab;
         }
-
-        else if($table ==="cueilleur"){
-            $colonnes = array("idCueilleur" , "nom" , "idGenre" , "dateNaissance");
-        }
-
-        else if($table === "categorieDepense"){
-            $colonnes = array("idCategorie" , "categorie");
-        }
-
-        else if($table === "salaireCueilleur"){
-            $colonnes = array("idSalaire" , "idCueilleur" , "montant");
-        }
-        return $colonnes;
+        $con = null;
+        return $res;
     }
 
     function validationInput($email , $password){
-        if(empty($email) || empty($password)){
-            return 0;
+        if(empty($email)){
+            return "E-Mail must be given";
+        }
+        else if(empty($password)){
+            return "Password must be given";
         }
         else if (!filter_var($email , FILTER_VALIDATE_EMAIL)){
-            return 0;
+            return "E-Mail format not valide";
         }
         return 1;
     }

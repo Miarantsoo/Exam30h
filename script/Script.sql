@@ -2,7 +2,7 @@ create table leaf_admin (
     idAdmin int auto_increment,
     nom varchar(50) , 
     eMail varchar(50) , 
-    motDePasse varchar(50),
+    motDePasse varchar(64),
     primary key(idAdmin)
 )engine=innoDB;
 
@@ -51,3 +51,13 @@ create table leaf_salaireCueilleur (
     primary key (idSalaire),
     foreign key (idCueilleur) references leaf_cueilleur(idCueilleur)
 )engine=innoDB;
+
+create or replace view v_parcelle as
+select 
+    leaf_parcelle.idParcelle , 
+    leaf_parcelle.numeroParcelle , 
+    leaf_parcelle.surface , 
+    leaf_variete.nomVariete 
+from leaf_parcelle 
+join leaf_variete 
+    on leaf_parcelle.idVariete = leaf_variete.idVariete; 
