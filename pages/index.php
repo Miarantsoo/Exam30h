@@ -41,7 +41,7 @@
 
             <button type="submit">Se Connecter</button>
 
-            <p><a href="connexion_admin.html">Se connecter en tant qu'admin</a></p>
+            <p><a href="connexion_admin.php">Se connecter en tant qu'admin</a></p>
 
         </form>
     </div>
