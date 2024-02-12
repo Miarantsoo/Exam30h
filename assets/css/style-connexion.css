@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(136, 180, 78, .7), rgba(136, 180, 78, .7)), url('../img/carousel-1.jpg') center center no-repeat;
+    min-height: 100vh;
+}
+
+.login-container, .register-container {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(1, 4, 35, 0.9);
+    overflow: hidden;
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    position: relative;
+    color: #075811;
+    animation: slide-up 0.5s ease;
+}
+
+a{
+    color: #0b4903;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    /* color: #333; */
+    font-size: 40px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    /* color: #333; */
+}
+
+p{
+    margin-top: 50px;
+}
+
+input, select {
+    width: 100%;
+    padding: 22px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    color: #2a2d3a;
+    border-radius: 10px;
+    background-color:rgba(255, 255, 255, 0.4) ;
+}
+
+button {
+    background-color: #0a8514;
+    color: #fff;
+    padding: 20px 34px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #61c45f;
+}
