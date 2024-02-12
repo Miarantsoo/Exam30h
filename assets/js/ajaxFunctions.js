@@ -2,7 +2,7 @@ export function fetchData (fileName) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
-        xhr.onreadystatechange = e => {
+        xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     const values = JSON.parse(xhr.responseText);
@@ -37,17 +37,16 @@ export function submitData(data, fileName){
     xhr.send(formData);
 }
 
-export function submitThenFetchData (data, fileName){
+export async function submitThenFetchData (data, fileName){
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
-
         const formData = new FormData(data);
-
         console.log(formData);
+    
         xhr.onload = e => {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    const res = (xhr.responseText == "True" || xhr.responseText == "False") ? xhr.responseText : JSON.parse(xhr.responseText);
+                    const res =  (xhr.responseText == "True" || xhr.responseText == "False") ? xhr.responseText :(xhr.responseText);
                     console.log(res);
                     resolve(res);
                 } else {
@@ -55,7 +54,7 @@ export function submitThenFetchData (data, fileName){
                 }
             }
         }
-
+        console.log(fileName);
         xhr.open("POST", "treatments/"+fileName);
         xhr.send(formData);
     });

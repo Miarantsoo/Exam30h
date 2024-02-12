@@ -141,20 +141,23 @@
 
     function validationInput($email , $password){
         if(empty($email)){
-            return "E-Mail must be given";
+            return json_encode("E-Mail must be given");
         }
         else if(empty($password)){
-            return "Password must be given";
+            return json_encode("Password must be given");
         }
         else if (!filter_var($email , FILTER_VALIDATE_EMAIL)){
-            return "E-Mail format not valide";
+            return json_encode("E-Mail format not valide");
         }
-        return 1;
+        return 0;
     }
 
     function verificationAdmin($email , $password){
+        $res = null;
         $con = PDOConnect();
-        $stmt = $con->query("SELECT * FROM leaf_admin where eMail = '".$email."' and motDePasse = SHA2(".$password.", 256)");
+        $pass = hash('sha256', $password);
+        $query = "SELECT * FROM leaf_admin where email = '".$email."' and motDePasse = '".$pass."'";
+        $stmt = $con->query($query);
         while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
             $res = $tab;
         }

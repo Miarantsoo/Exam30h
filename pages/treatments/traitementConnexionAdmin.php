@@ -5,15 +5,19 @@
     $email = $_POST["email"];
     $mdp = $_POST["password"];
 
-    $verif = validationInput($email, $password);
+    $verif = validationInput($email, $mdp);
 
     if ($verif == 0) {
         $admin = verificationAdmin($email, $mdp);
-        $_SESSION["admin"] = $admin->nom;
-        header("Location:../pageAdmin.php");
+        if (!empty($admin)) {
+            $_SESSION["admin"] = $admin->nom;
+            header("Location:../pageAdmin.php");
+        } else {
+            echo json_encode("Identifiants incorrects!");
+        }
     } else {
         echo $verif;
     }
     
-
+    session_destroy();
 ?>

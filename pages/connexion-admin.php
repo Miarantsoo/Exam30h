@@ -34,7 +34,7 @@
         <h2>Connexion Admin</h2>
         <form id="form-admin">
             <label for="username">E-mail</label>
-            <input type="email" id="username" name="username" value="" required>
+            <input type="email" id="username" name="email" value="" required>
             
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" value="" required>
@@ -44,6 +44,9 @@
             <p><a href="index.php">Se connecter en tant qu'utilisateur</a></p>
 
         </form>
+    </div>
+    <div class="alert alert-danger">
+        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
     </div>
 <script type="module" src="../assets/js/script.js"></script>
 </body>
