@@ -102,7 +102,9 @@
         <h1 class="display-6">Liste salaire cueilleur</h1>
     </div>
 
-    <table border='1'>
+    <div class="container">
+    <div class="table-responsive">
+        <table>
         <thead>
             <tr>
                 <th>Nom variete</th>
@@ -124,6 +126,8 @@
             </tr>
         </tbody>
     </table>
+    </div>
+</div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

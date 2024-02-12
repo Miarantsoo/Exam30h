@@ -105,7 +105,8 @@
     </div>
 
     <div class="container">
-            <table>
+    <div class="table-responsive">
+        <table>
                 <thead>
                     <tr>
                         <th>Nom variété</th>
@@ -130,6 +131,7 @@
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
+        </div>
     </div>
 
     <!-- JavaScript Libraries -->

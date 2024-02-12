@@ -101,7 +101,9 @@
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste parcelle</h1>
     </div>
-    <table border='1'>
+    <div class="container">
+    <div class="table-responsive">
+        <table>
         <thead>
             <tr>
                 <th>Numero Parcelle</th>
@@ -123,6 +125,8 @@
             </tr>
         </tbody>
     </table>
+    </div>
+</div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

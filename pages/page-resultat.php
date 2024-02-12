@@ -23,7 +23,7 @@
     <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
     <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->s
+    <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -62,7 +62,7 @@
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-dark mb-4  slideInDown">Depenses</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Resultat Recolte</h1>
             <nav aria-label="breadcrumb animated slideInDown">
             </nav>
         </div>
@@ -73,32 +73,26 @@
     <div class="col-lg-6">
       <div class="form-insert">
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-          <h1 class="display-6">Saisie Dépenses</h1>
-        </div>
-        <form action="#" class="mt-4">
+          <h1 class="display-6">Affiche Resultat</h1>
+            </div>
+            <form action="#" class="mt-4">
+                <div class="mb-3">
+                <label for="Date">Date début</label>
+                <input type="date" id="" name="date-debut"required>
+            </div>
+
             <div class="mb-3">
-            <label for="Date">Date dépense</label>
-            <input type="date" id="date" name="date"required>
-        </div>
-
-        <div class="mb-3">
-            <label for="categorie">Choix catégorie dépense</label>
-            <select id="choix-depense" name="choix-depense" required>
-            <option value="depense1">Dépense 1</option>
-            <option value="depense2">Dépense 2</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="montant">Montant</label>
-            <input type="text" id="montant" name="montant" required>
-        </div>
-
-        <button type="submit">Valider</button>
+                <label for="Date">Date fin</label>
+                <input type="date" id="" name="date-fin"required>
+            </div>
+            <button type="submit">Valider</button>
         </form>
       </div>
     </div>
   </div>
+</div>
+
+<div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 </div>
 
     <!-- JavaScript Libraries -->

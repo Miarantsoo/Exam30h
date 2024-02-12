@@ -50,7 +50,7 @@
                                 <a href="saisie-depense.php" class="dropdown-item">Depenses</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Resultat</a>
+                        <a href="page-resultat.php" class="nav-item nav-link">Resultat</a>
                     </div>
                     <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
