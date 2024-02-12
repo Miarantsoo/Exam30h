@@ -53,7 +53,7 @@
                         <a href="#" class="nav-item nav-link">Resultat</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
-                        <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+                        <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>
@@ -68,28 +68,37 @@
         </div>
     </div>
 
-    <div class="form-insert">
-    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Saisie cueillette</h1>
-    </div>
-    <form action="#">
-            <label for="Date">Date cueillette</label>
-            <input type="date" id="" name="date" value="" required>
-            <br>
-            
-            <label for="Cueilleur">Choix cueilleur</label>
-            <select id="" name="choix-cueilleur" required>
-                <option value="">cueilleur1</option>
-                <option value="">cueilleur2</option>
-            </select>
-            <br>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+        <div class="form-insert">
+            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+            <h1 class="display-6">Saisie Dépenses</h1>
+            </div>
+            <form action="#" class="mt-4">
+            <div class="mb-3">
+                <label for="Date">Date cueillette</label>
+                <input type="date" id="" name="date" value="" required>
+            </div>
 
-            <label for="poid">Poids cueilli</label>
+            <div class="mb-3">
+                <label for="Cueilleur">Choix cueilleur</label>
+                <select id="" name="choix-cueilleur" required>
+                    <option value="">cueilleur1</option>
+                    <option value="">cueilleur2</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="poid">Poids cueilli</label>
                 <input type="text" id="" name="poids" required>
-            <br>
+            </div>
 
             <button type="submit">Valider</button>
-    </form>
+            </form>
+        </div>
+        </div>
+    </div>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -108,7 +117,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end">
-                    © ETU 002669
+                © ETU 2779 - ETU 2362 - ETU 002669
                 </div>
             </div>
         </div>

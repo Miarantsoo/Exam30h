@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
-                        <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+                        <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>
@@ -71,52 +71,66 @@
         </div>
     </div>
 
-    <div class="form-insert">
-    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Insert variete</h1>
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-6">
+        <div class="form-insert">
+            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <h1 class="display-6">Insert variete</h1>
+            </div>
+            <form action="#" class="mt-4">
+                <div class="mb-3">
+                    <label for="Nom">Nom variete</label>
+                    <input type="text" id="username" name="username" value="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation" name="occupation" value="" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="rendement">Rendement</label>
+                    <input type="text" id="password" name="rendement" value="" required>
+                </div>
+
+                    <button type="submit">Inserer</button>
+            </form>
+            </div>
+        </div>
     </div>
-    <form action="#">
-            <label for="Nom">Nom variete</label>
-            <input type="text" id="username" name="username" value="" required>
-            <br>
-            
-            <label for="occupation">Occupation</label>
-            <input type="text" id="occupation" name="occupation" value="" required>
-            <br>
-
-            <label for="rendement">Rendement</label>
-            <input type="text" id="password" name="rendement" value="" required>
-            <br>
-
-            <button type="submit">Inserer</button>
-    </form>
     </div>
 
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste variete</h1>
     </div>
 
-    <table border='1'>
-        <thead>
-            <tr>
-                <th>Nom variete</th>
-                <th>Occupation</th>
-                <th>Rendement</th>
-                <th>Acitons</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nom1</td>
-                <td>Occupation1</td>
-                <td>Rendement1</td>
-                <td>
-                    <a href="" class="bi bi-trash" id="icon"></a>
-                    <a href="" class="bi bi-pencil" id="icon"></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom variété</th>
+                        <th>Occupation</th>
+                        <th>Rendement</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nom1</td>
+                        <td>Occupation1</td>
+                        <td>Rendement1</td>
+                        <td>
+                            <a href="" class="bi bi-trash" id="icon"></a>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <a href="" class="bi bi-pencil" id="icon"></a>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -134,7 +148,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end">
-                    © ETU 002669
+                © ETU 2779 - ETU 2362 - ETU 002669
                 </div>
             </div>
         </div>

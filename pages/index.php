@@ -46,6 +46,5 @@
             <p> Pas encore de compte ?<a href="inscription.php">Créer ici</a></p>
         </form>
     </div>
-
 </body>
 </html>

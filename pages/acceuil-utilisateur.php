@@ -51,7 +51,7 @@
                         <a href="#" class="nav-item nav-link">Resultat</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
-                        <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+                        <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end">
-                    © ETU 002669
+                © ETU 2779 - ETU 2362 - ETU 002669
                 </div>
             </div>
         </div>
