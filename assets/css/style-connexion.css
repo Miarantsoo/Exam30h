@@ -18,10 +18,10 @@ body {
     width: 600px;
     max-width: 100%;
     text-align: center;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 10px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     box-sizing: border-box;
     position: relative;
     color: #075811;
@@ -56,23 +56,25 @@ label {
 }
 
 p{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 input, select {
     width: 100%;
-    padding: 22px;
-    margin-bottom: 50px;
+    padding: 15px;
+    margin-bottom: 35px;
     box-sizing: border-box;
     color: #2a2d3a;
     border-radius: 10px;
     background-color:rgba(255, 255, 255, 0.4) ;
+    position: static;
+    display: block;
 }
 
 button {
     background-color: #0a8514;
     color: #fff;
-    padding: 20px 34px;
+    padding: 15px 34px;
     margin-left: 10px;
     margin-right: 10px;
     border: none;
