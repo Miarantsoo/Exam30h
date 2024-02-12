@@ -125,6 +125,20 @@
         return $res;
     }
 
+    function selectFromTablePourAfficher ($table){
+        $res = array();
+        $con = PDOConnect();
+        if($table == "leaf_parcelle" || $table == "leaf_cueilleur" || $table == "leaf_salaireCueilleur"){
+            $table = "v_"+$table;
+        }
+        $stmt = $con->query("SELECT * FROM $table");
+        while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $res[] = $tab;
+        }
+        $con = null;
+        return $res;
+    }
+
     function validationInput($email , $password){
         if(empty($email)){
             return "E-Mail must be given";
@@ -148,23 +162,4 @@
         $con = null;
         return $res[0];
     }
-
-    function verification ($email , $password){
-        $requete = "select * from user where eMail = :eMail and motDePasse = SHA(:password)";
-
-        $pdo = PDOConnect();
-
-        $statement = $pdo->prepare($requete);
-        $statement->bindParam(':eMail' , $email);
-        $statement->bindParam(':password' , $password);
-
-        $statement->execute();
-
-        $resultats = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        $pdo = null;
-
-        return $resultats;
-    }
-
 ?>
