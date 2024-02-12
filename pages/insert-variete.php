@@ -142,16 +142,16 @@
 
     <!-- Template Javascript -->
     <script src="../assets/js/main.js"></script>
-</body>
-<footer>
-    <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-end">
-                © ETU 002779 - ETU 002362 - ETU 002669
+    <footer>
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 text-center">
+                    © ETU 002779 - ETU 002362 - ETU 002669
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
 </html>

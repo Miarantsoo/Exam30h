@@ -79,7 +79,7 @@
     <div class="container-fluid copyright py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-end">
+                <div class="col-md-6 offset-md-3 text-center">
                 © ETU 002779 - ETU 002362 - ETU 002669
                 </div>
             </div>
