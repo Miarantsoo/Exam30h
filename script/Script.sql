@@ -58,3 +58,34 @@ create table leaf_salaireCueilleur (
 )engine=innoDB;
 
 INSERT INTO leaf_admin VALUES(null, "Armand", "armand55@itu.mg", sha2("haha", 256));
+
+create or replace view v_leaf_parcelle as
+select 
+    leaf_parcelle.idParcelle , 
+    leaf_parcelle.numeroParcelle , 
+    leaf_parcelle.surface , 
+    leaf_variete.nomVariete 
+from leaf_parcelle 
+join leaf_variete 
+    on leaf_parcelle.idVariete = leaf_variete.idVariete; 
+
+
+create or replace view v_leaf_cueilleur as
+select 
+    leaf_cueilleur.idCueilleur , 
+    leaf_cueilleur.nom , 
+    leaf_genre.nom as genre, 
+    leaf_cueilleur.dateNaissance 
+from leaf_cueilleur 
+join leaf_genre 
+    on leaf_cueilleur.idGenre = leaf_genre.idGenre;
+
+
+create or replace view v_leaf_selaireCueilleur as
+select 
+    leaf_salaireCueilleur.idSalaire , 
+    leaf_cueilleur.nom , 
+    leaf_salaireCueilleur.montant 
+from leaf_salaireCueilleur 
+join leaf_cueilleur 
+    on leaf_salaireCueilleur.idCueilleur = leaf_cueilleur.idCueilleur;

@@ -55,7 +55,10 @@
         $requete .= ") values (null, ";
 
         for($i=0 ; $i<count($donnees) ; $i++){
-            if(explode("(" , $type[$i+1])[0] =="varchar" || $type[$i+1] == "date"){
+            if($colonnes[$i+1] == "motDePasse"){
+                $requete.="SHA2('".$donnees[$i]."' , 256)";
+            }
+            else if(explode("(" , $type[$i+1])[0] =="varchar" || $type[$i+1] == "date"){
                 $requete.="'".$donnees[$i]."'";
             }
             else{
@@ -91,14 +94,60 @@
         $type = typeColonnesTable($table);
         $requete = "update $table set ";
 
+        for($i=0 ; $i<count($donnees) ; $i++){
+            if(explode("(" , $type[$i+1])[0] =="varchar" || $type[$i+1] == "date"){
+                $requete.=$colonnes[$i+1]." = '".$donnees[$i]."'";
+            }
+            else{
+                $requete .= $colonnes[$i+1]." = ".$donnees[$i];
+            }
+            if($i<count($donnees)-1){
+                $requete .= ", ";
+            }
+        }
+
+        $requete .= " where $colonnes[0] = $id";
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+        // echo $requete;
+    }
+
+    function selectFromTable ($table){
+        $res = array();
+        $con = PDOConnect();
+        $stmt = $con->query("SELECT * FROM $table");
+        while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $res[] = $tab;
+        }
+        $con = null;
+        return $res;
+    }
+
+    function selectFromTablePourAfficher ($table){
+        $res = array();
+        $con = PDOConnect();
+        if($table == "leaf_parcelle" || $table == "leaf_cueilleur" || $table == "leaf_salaireCueilleur"){
+            $table = "v_"+$table;
+        }
+        $stmt = $con->query("SELECT * FROM $table");
+        while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $res[] = $tab;
+        }
+        $con = null;
+        return $res;
     }
 
     function validationInput($email , $password){
-        if(empty($email) || empty($password)){
-            return 0;
+        if(empty($email)){
+            return "E-Mail must be given";
+        }
+        else if(empty($password)){
+            return "Password must be given";
         }
         else if (!filter_var($email , FILTER_VALIDATE_EMAIL)){
-            return 0;
+            return "E-Mail format not valide";
         }
         return 1;
     }
@@ -112,23 +161,4 @@
         $con = null;
         return $res;
     }
-
-    function verification ($email , $password){
-        $requete = "select * from user where eMail = :eMail and motDePasse = SHA(:password)";
-
-        $pdo = PDOConnect();
-
-        $statement = $pdo->prepare($requete);
-        $statement->bindParam(':eMail' , $email);
-        $statement->bindParam(':password' , $password);
-
-        $statement->execute();
-
-        $resultats = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        $pdo = null;
-
-        return $resultats;
-    }
-
 ?>
