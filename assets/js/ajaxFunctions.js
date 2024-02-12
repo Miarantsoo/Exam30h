@@ -46,7 +46,7 @@ export async function submitThenFetchData (data, fileName){
         xhr.onload = e => {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    const res =  (xhr.responseText == "True" || xhr.responseText == "False") ? xhr.responseText :(xhr.responseText);
+                    const res =  (xhr.responseText == "True" || xhr.responseText == "False") ? xhr.responseText :JSON.parse(xhr.responseText);
                     console.log(res);
                     resolve(res);
                 } else {

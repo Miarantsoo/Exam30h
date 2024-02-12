@@ -39,14 +39,13 @@
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" value="" required>
 
-            <button type="submit">Se Connecter</button>
+            <button type="submit" id="connect-admin">              
+                Se Connecter
+            </button>
 
             <p><a href="index.php">Se connecter en tant qu'utilisateur</a></p>
 
         </form>
-    </div>
-    <div class="alert alert-danger">
-        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
     </div>
 <script type="module" src="../assets/js/script.js"></script>
 </body>

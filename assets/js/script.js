@@ -8,7 +8,6 @@ console.log("hoho");
 
 function showErrors(messageErreur){
     const div = document.createElement("div");
-    // div.class = "alert alert-danger";
     div.classList.add("alert");
     div.classList.add("alert-danger");
     div.classList.add("position-error");
@@ -16,15 +15,36 @@ function showErrors(messageErreur){
     message.innerHTML = messageErreur;
     div.appendChild(message);
     body.appendChild(div);
+
+    setTimeout(() => {
+        body.removeChild(div);
+    }, 3000);
 }
 
 
 form.addEventListener("submit",async e => {
     e.preventDefault();
+    const button = document.getElementById("connect-admin");
+    button.disabled = true;
+    button.innerHTML = "";
+    const span = document.createElement("span");
+    span.classList.add("spinner-border");
+    span.classList.add("spinner-border-sm");
+    span.role = "status";
+    span.ariaHidden = "true";
+    const strong = document.createElement("strong");
+    strong.innerHTML = "  Loading...";
+    button.appendChild(span);
+    button.appendChild(strong);
     try {
         const data =await submitThenFetchData(form, "traitementConnexionAdmin.php");
-        if (data != "") {
-            showErrors(data);
+        if (data != "Mety") {
+            button.innerHTML = "Se Connecter";
+            const dataWithoutQuotes = data.replace(/"/g, "");
+            showErrors(dataWithoutQuotes);
+            button.disabled = false;
+        } else {
+            window.location.href = "acceuil-admin.php";
         }
     } catch (error) {
         console.log(error);

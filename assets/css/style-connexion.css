@@ -31,6 +31,23 @@ a{
     color: #0b4903;
 }
 
+.position-error {
+    position: absolute;
+    z-index: 100;
+    top: 2%;
+    font-family: 'Arial', sans-serif;
+    animation: error 1s ease;
+}
+
+@keyframes error {
+    0% {
+        top: -15%;
+    }
+    100% {
+        top: 2%;
+    } 
+}
+
 @keyframes slide-up {
     from {
         transform: translateY(50px);
