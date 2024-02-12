@@ -83,7 +83,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end">
-                    © ETU 2779 - ETU 2362 - ETU 002669
+                    © ETU 002779 - ETU 002362 - ETU 002669
                 </div>
             </div>
         </div>
