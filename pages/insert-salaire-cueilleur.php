@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border-start ps-4 d-none d-lg-block">
+                    <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
