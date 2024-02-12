@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-color: #f0f0f0;
     font-family: 'Arial', sans-serif;
-    background: url('../img/carousel-1.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(136, 180, 78, .7), rgba(136, 180, 78, .7)), url('../img/carousel-1.jpg') center center no-repeat;
     min-height: 100vh;
 }
 
@@ -24,8 +24,12 @@ body {
     padding-bottom: 40px;
     box-sizing: border-box;
     position: relative;
-    color: #0e055f;
+    color: #075811;
     animation: slide-up 0.5s ease;
+}
+
+a{
+    color: #0b4903;
 }
 
 @keyframes slide-up {
@@ -66,7 +70,7 @@ input, select {
 }
 
 button {
-    background-color: #1b135f;
+    background-color: #0a8514;
     color: #fff;
     padding: 20px 34px;
     margin-left: 10px;
