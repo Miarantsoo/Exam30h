@@ -40,7 +40,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil_admin.php" class="nav-item nav-link active">Home</a>
+                        <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
@@ -60,7 +60,6 @@
             </nav>
         </div>
     </div>
-
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
             <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">Leaf</strong></p>
@@ -79,4 +78,15 @@
     <!-- Template Javascript -->
     <script src="../assets/js/main.js"></script>
 </body>
+<footer>
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-end">
+                    © ETU 002669
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

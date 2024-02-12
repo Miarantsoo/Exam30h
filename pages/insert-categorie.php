@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil_admin.php" class="nav-item nav-link active">Home</a>
+                        <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
@@ -71,26 +71,33 @@
     </div>
 
     <div class="form-insert">
-    <form action="#">
-            <label for="Nom">Nom categorie</label>
-            <input type="text" id="categorie" name="categorie" value="" required>
-
-            <button type="submit">Inserer</button>
-    </form>
+    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="display-6">Insert categorie</h1>
+    </div>
+        <form action="#">
+                <label for="Nom">Nom categorie</label>
+                <input type="text" id="categorie" name="categorie" value="" require
+                <button type="submit">Inserer</button>
+        </form>
     </div>
 
+    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="display-6">Liste categorie</h1>
+    </div>
     <table border='1'>
         <thead>
             <tr>
                 <th>Nom categorie</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Nom1</td>
                 <td>
-                    <a href="" class="glyphicon glyphicon-trash" id="icon"></a>
-                    <a href="" class="glyphicon glyphicon-pencil" id="icon"></a>
+                    <a href="" class="bi bi-trash" id="icon"></a>
+                    &nbsp;
+                    <a href="" class="bi bi-pencil" id="icon"></a>
                 </td>
             </tr>
         </tbody>
@@ -107,4 +114,15 @@
     <!-- Template Javascript -->
     <script src="../assets/js/main.js"></script>
 </body>
+<footer>
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-end">
+                    © ETU 002669
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

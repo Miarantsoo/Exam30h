@@ -68,6 +68,7 @@
             </div>
         </form>
     </div>
+
     <script>
         function nextStep(step) {
             // Masquer l'étape actuelle

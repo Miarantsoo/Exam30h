@@ -27,6 +27,7 @@
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
+    <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/style-connexion.css" rel="stylesheet">
 </head>
 <body>
@@ -45,5 +46,6 @@
             <p> Pas encore de compte ?<a href="inscription.php">Créer ici</a></p>
         </form>
     </div>
+
 </body>
 </html>
