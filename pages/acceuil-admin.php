@@ -70,11 +70,23 @@
         </div>
     </div>
 
-    <div class=""> 
-        <h4> <a href="#">To do</a> </h4>
-        <h4> <a href="#">To do</a> </h4>
-        <h4> <a href="#">To do</a> </h4>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">To do list</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
