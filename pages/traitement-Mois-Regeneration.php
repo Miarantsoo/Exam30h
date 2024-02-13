@@ -6,9 +6,9 @@
         $checkBoxValue = $_POST['mois'];
         foreach($checkBoxValue as $value){
             $values[] = $value;
-            echo $value;
         }
 
-        // insertIntoMoisRegeneration($values);
+        insertIntoMoisRegeneration($values);
+        header("location:configuration-saison.php");
     }
 ?>
