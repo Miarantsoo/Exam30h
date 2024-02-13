@@ -18,7 +18,7 @@
     } else if(isset($_GET["id"])){
         deleteFromTable("leaf_salairecueilleur", $_GET["id"]);
     }else {
-        $result = selectFromTable("leaf_salairecueilleur");
+        $result = selectFromTable("v_leaf_selairecueilleur");
         echo json_encode($result);
     }
     

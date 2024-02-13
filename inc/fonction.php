@@ -165,6 +165,19 @@
         return $res;
     }
 
+    function verificationUSer($email , $password){
+        $res = null;
+        $con = PDOConnect();
+        $pass = hash('sha256', $password);
+        $query = "SELECT * FROM leaf_user where email = '".$email."' and motDePasse = '".$pass."'";
+        $stmt = $con->query($query);
+        while ( $tab = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $res = $tab;
+        }
+        $con = null;
+        return $res;
+    } 
+
     function poidTotalCueillette ($debut , $fin){
         $val = 0;
         $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$debut' and dateCueillette<='$fin'";

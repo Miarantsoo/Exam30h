@@ -73,9 +73,9 @@
         <div class="col-lg-6">
         <div class="form-insert">
             <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            <h1 class="display-6">Saisie Dépenses</h1>
+            <h1 class="display-6">Saisie cueillettes</h1>
             </div>
-            <form action="#" class="mt-4">
+            <form class="mt-4" id="form">
             <div class="mb-3">
                 <label for="Date">Date cueillette</label>
                 <input type="date" id="" name="date" value="" required>
@@ -83,15 +83,21 @@
 
             <div class="mb-3">
                 <label for="Cueilleur">Choix cueilleur</label>
-                <select id="" name="choix-cueilleur" required>
-                    <option value="">cueilleur1</option>
-                    <option value="">cueilleur2</option>
+                <select id="select" name="choix-cueilleur" required>
+                    
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="parcelle">Parcelle</label>
+                <select id="select-parcelle" name="parcelle" required>
+                    
                 </select>
             </div>
 
             <div class="mb-3">
                 <label for="poid">Poids cueilli</label>
-                <input type="text" id="" name="poids" required>
+                <input type="number" step="any" id="poid" name="poids" required>
             </div>
             <button type="submit">Valider</button>
             </form>
@@ -100,16 +106,6 @@
     </div>
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/lib/wow/wow.min.js"></script>
-    <script src="../assets/lib/easing/easing.min.js"></script>
-    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="../assets/js/main.js"></script>
     <footer>
         <div class="container-fluid copyright py-4">
             <div class="container">
@@ -121,5 +117,16 @@
             </div>
         </div>
     </footer>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/wow/wow.min.js"></script>
+    <script src="../assets/lib/easing/easing.min.js"></script>
+    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/script-cueillette.js"></script>
 </body>
 </html>

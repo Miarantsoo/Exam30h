@@ -33,18 +33,20 @@
 <body>
     <div class="login-container">
         <h2>Connexion Utilisateur</h2>
-        <form action="testFonction.php">
+        <form id="form-admin">
+            <input type="hidden" name="simpleUser" value="0">
             <label for="username">E-mail</label>
-            <input type="email" id="username" name="username" value="" required>
+            <input type="email" id="username" name="email" value="" required>
             
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" value="" required>
 
-            <button type="submit">Se Connecter</button>
+            <button type="submit" id="connect-admin">Se Connecter</button>
 
             <p><a href="connexion-admin.php">Se connecter en tant qu'admin</a></p>
             <p> Pas encore de compte ?<a href="inscription.php">Créer ici</a></p>
         </form>
     </div>
+    <script type="module" src="../assets/js/script.js"></script>
 </body>
 </html>

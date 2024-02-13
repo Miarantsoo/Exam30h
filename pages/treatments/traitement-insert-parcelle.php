@@ -20,7 +20,7 @@
     } else if(isset($_GET["id"])){
         deleteFromTable("leaf_parcelle", $_GET["id"]);
     }else {
-        $result = selectFromTable("leaf_parcelle");
+        $result = selectFromTable("v_leaf_parcelle");
         echo json_encode($result);
     }
     

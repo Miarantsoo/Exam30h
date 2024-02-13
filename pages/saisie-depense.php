@@ -75,7 +75,7 @@
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
           <h1 class="display-6">Saisie Dépenses</h1>
         </div>
-        <form action="#" class="mt-4">
+        <form class="mt-4" id="form">
             <div class="mb-3">
             <label for="Date">Date dépense</label>
             <input type="date" id="date" name="date"required>
@@ -83,9 +83,8 @@
 
         <div class="mb-3">
             <label for="categorie">Choix catégorie dépense</label>
-            <select id="choix-depense" name="choix-depense" required>
-            <option value="depense1">Dépense 1</option>
-            <option value="depense2">Dépense 2</option>
+            <select id="select" name="choix-depense" required>
+            
             </select>
         </div>
 
@@ -122,5 +121,6 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="../assets/js/script-depense.js"></script>
 </body>
 </html>
