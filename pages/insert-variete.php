@@ -90,7 +90,12 @@
 
                 <div class="mb-3">
                     <label for="rendement">Rendement</label>
-                    <input type="text" id="password" name="rendement" value="" required>
+                    <input type="text" id="" name="rendement" value="" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="prix-vente">Prix de vente</label>
+                    <input type="text" id="" name="prix-vente" value="" required>
                 </div>
 
                     <button type="submit">Inserer</button>
@@ -112,6 +117,7 @@
                         <th>Nom variété</th>
                         <th>Occupation</th>
                         <th>Rendement</th>
+                        <th>Prix de vente</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -120,6 +126,7 @@
                         <td>Nom1</td>
                         <td>Occupation1</td>
                         <td>Rendement1</td>
+                        <td>12000</td>
                         <td>
                             <a href="" class="bi bi-trash" id="icon"></a>
                             &nbsp;
