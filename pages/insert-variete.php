@@ -94,12 +94,12 @@
 
                 <div class="mb-3">
                     <label for="rendement">Rendement</label>
-                    <input type="text" id="" name="rendement" value="" required>
+                    <input type="number" step="any" id="" name="rendement" value="" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="prix-vente">Prix de vente</label>
-                    <input type="text" id="" name="prix-vente" value="" required>
+                    <input type="number" step="any" id="" name="prix-vente" value="" required>
                 </div>
 
                     <button type="submit">Inserer</button>

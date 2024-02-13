@@ -6,14 +6,16 @@
         $nomVariete = $_POST["variete"];
         $occupation = $_POST["occupation"];
         $rendement = $_POST["rendement"];
-        $values = [$nomVariete, $occupation, $rendement];
+        $prixVente = $_POST["prix-vente"];
+        $values = [$nomVariete, $occupation, $rendement, $prixVente];
 
         updateTable("leaf_variete", $id, $values);
     } else if (isset($_POST["variete"])) {
         $nomVariete = $_POST["variete"];
         $occupation = $_POST["occupation"];
         $rendement = $_POST["rendement"];
-        $values = [$nomVariete, $occupation, $rendement];
+        $prixVente = $_POST["prix-vente"];
+        $values = [$nomVariete, $occupation, $rendement, $prixVente];
     
         insertIntoTable("leaf_variete", $values);
 
