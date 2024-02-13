@@ -74,7 +74,6 @@
     <div class="container mt-5">
     <h1>Choisir les Mois de saison du thé</h1>
         <div class="row mt-4">
-            <!-- 6 mois alignés en haut -->
             <div class="col-md-2">
                 <label><input type="checkbox" name="mois" value="Janvier"> Janvier</label><br>
                 <label><input type="checkbox" name="mois" value="Février"> Février</label><br>
@@ -83,8 +82,6 @@
                 <label><input type="checkbox" name="mois" value="Mai"> Mai</label><br>
                 <label><input type="checkbox" name="mois" value="Juin"> Juin</label><br>
             </div>
-
-            <!-- 6 mois alignés en bas -->
             <div class="col-md-2 offset-md-8">
                 <label><input type="checkbox" name="mois" value="Juillet"> Juillet</label><br>
                 <label><input type="checkbox" name="mois" value="Août"> Août</label><br>
