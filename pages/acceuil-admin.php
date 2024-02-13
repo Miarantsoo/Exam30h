@@ -30,6 +30,7 @@
 </head>
 <body>
     <div class="container-fluid bg-white sticky-top" style="top: -150px;">
+    <div class="container-fluid bg-white sticky-top" style="top: -150px;">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
                 <!-- <a href="index.html" class="navbar-brand">
@@ -41,7 +42,6 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
@@ -52,6 +52,7 @@
                                 <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
+                        <a href="configuration-saison.php" class="nav-item nav-link">Configuration saison</a>
                     </div>
                     <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
@@ -59,6 +60,7 @@
                 </div>
             </nav>
         </div>
+    </div>
     </div>
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">

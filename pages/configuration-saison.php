@@ -74,35 +74,23 @@
     <div class="container mt-5">
         <h1>Choisir les Mois de la Saison du Thé</h1>
         <div  class="divcheckbox">
-            <form id="saisonduthe-form" action="#">
+            <form id="" action="#">
                 <div class="row mt-4">
                     <div class="col-md-2">
-                    <div  class="boxcheck">
-                        <label><input type="checkbox" name="mois" value="1"> Janvier</label><br>
-                        </div>
-                    <div  class="boxcheck">
-                        <label><input type="checkbox" name="mois" value="2"> Février</label><br>
-                        </div>
-                    <div  class="boxcheck">
-                        <label><input type="checkbox" name="mois" value="3"> Mars</label><br>
-                        </div>
-                    <div  class="boxcheck">
-                        <label><input type="checkbox" name="mois" value="4"> Avril</label><br>
-                        </div>
-                    <div  class="boxcheck">
-                        <label><input type="checkbox" name="mois" value="5"> Mai</label><br>
-                        </div>
-                    <div  class="boxcheck">
-                        <label><input type="checkbox" name="mois" value="6"> Juin</label><br>
-                        </div>
+                        <label> Janvier<input type="checkbox" name="mois" value="1"></label><br>
+                        <label> Février<input type="checkbox" name="mois" value="2"></label><br>
+                        <label> Mars<input type="checkbox" name="mois" value="3"></label><br>
+                        <label> Avril<input type="checkbox" name="mois" value="4"></label><br>
+                        <label> Mai<input type="checkbox" name="mois" value="5"></label><br>
+                        <label> Juin<input type="checkbox" name="mois" value="6"></label><br>
                     </div>
                     <div class="col-md-2 offset-md-8">
-                        <label><input type="checkbox" name="mois" value="7"> Juillet</label><br>
-                        <label><input type="checkbox" name="mois" value="8"> Août</label><br>
-                        <label><input type="checkbox" name="mois" value="9"> Septembre</label><br>
-                        <label><input type="checkbox" name="mois" value="10"> Octobre</label><br>
-                        <label><input type="checkbox" name="mois" value="11"> Novembre</label><br>
-                        <label><input type="checkbox" name="mois" value="12"> Décembre</label><br>
+                        <label> Juillet<input type="checkbox" name="mois" value="7"></label><br>
+                        <label> Août<input type="checkbox" name="mois" value="8"></label><br>
+                        <label> Septembre<input type="checkbox" name="mois" value="9"></label><br>
+                        <label> Octobre<input type="checkbox" name="mois" value="10"></label><br>
+                        <label> Novembre<input type="checkbox" name="mois" value="11"></label><br>
+                        <label> Décembre<input type="checkbox" name="mois" value="12"></label><br>
                     </div>
                 </div>
                 <button type="submit">Valider</button>
