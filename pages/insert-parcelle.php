@@ -93,6 +93,7 @@
             </select>
 
             <button type="submit">Inserer</button>
+            <button class="bi bi-arrow-clockwise"></button>
     </form>
     </div>
     </div>
