@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+    <title>Leaf</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -35,7 +35,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
                 <!-- <a href="index.html" class="navbar-brand">
-                    <img class="img-fluid" src="../assets/img/logo.png" alt="Logo">
+                    <img class="img-fluid" src="../assets/img/logo.jpg" alt="Logo">
                 </a> -->
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -50,9 +50,9 @@
                                 <a href="saisie-depense.php" class="dropdown-item">Depenses</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Resultat</a>
+                        <a href="page-resultat.php" class="nav-item nav-link">Resultat</a>
                     </div>
-                    <div class="border-start ps-4 d-none d-lg-block">
+                    <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
@@ -111,16 +111,16 @@
 
     <!-- Template Javascript -->
     <script src="../assets/js/main.js"></script>
-</body>
-<footer>
-    <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-end">
-                © ETU 002779 - ETU 002362 - ETU 002669
+    <footer>
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 text-center">
+                    © ETU 002779 - ETU 002362 - ETU 002669
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
 </html>

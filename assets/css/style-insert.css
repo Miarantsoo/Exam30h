@@ -46,6 +46,15 @@ th {
     background-color: #8aad3a;
 }
 
+h4{
+    color: #89c908;;
+}
+
+h2{
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+
 button{
     background-color:#9ccb3c;
     color: #fff;

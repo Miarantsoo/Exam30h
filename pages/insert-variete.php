@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+    <title>Leaf</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border-start ps-4 d-none d-lg-block">
+                    <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
@@ -119,6 +119,7 @@
 
                 </tbody>
             </table>
+        </div>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -135,7 +136,7 @@
         <div class="container-fluid copyright py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 offset-2 text-center text-md-end">
+                    <div class="col-md-6 offset-md-3 text-center">
                     © ETU 002779 - ETU 002362 - ETU 002669
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+    <title>Leaf</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border-start ps-4 d-none d-lg-block">
+                    <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
@@ -80,16 +80,16 @@
                 </div>
                 <form id="form">
                     <input type="hidden" name="id">
-                        <label for="Nom">Non cueilleur</label>
-                        <select id="select-cueilleur" name="namecueilleur" required>
-                        </select>
-                        <br>
-                        
-                        <label for="montant">Montant salaire</label>
-                        <input type="text" id="montant" name="salaire" value="" required>
-                        <br>
+                    <label for="Nom">Nom cueilleur</label>
+                    <select id="select-cueilleur" name="namecueilleur" required>
+                    </select>
+                    <br>
+                    
+                    <label for="montant">Montant salaire</label>
+                    <input type="number" step="any" id="montant" name="salaire" value="" required>
+                    <br>
 
-                        <button type="submit">Inserer</button>
+                    <button type="submit">Inserer</button>
                 </form>
             </div>
         </div>
@@ -101,7 +101,9 @@
         <h1 class="display-6">Liste salaire cueilleur</h1>
     </div>
 
-    <table border='1'>
+    <div class="container">
+    <div class="table-responsive">
+        <table>
         <thead>
             <tr>
                 <th>Nom cueilleur</th>
@@ -112,6 +114,8 @@
         <tbody id="tbody-salaire">
         </tbody>
     </table>
+    </div>
+</div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -122,11 +126,12 @@
     <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
+    <script src="../assets/js/main.js"></script>
     <footer>
         <div class="container-fluid copyright py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-end">
+                    <div class="col-md-6 offset-md-3 text-center">
                     © ETU 002779 - ETU 002362 - ETU 002669
                     </div>
                 </div>

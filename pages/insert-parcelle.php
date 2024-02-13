@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+<title>Leaf</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,7 +34,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
                 <!-- <a href="index.html" class="navbar-brand">
-                    <img class="img-fluid" src="../assets/img/logo.png" alt="Logo">
+                    <img class="img-fluid" src="../assets/img/logo.jpg" alt="Logo">
                 </a> -->
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border-start ps-4 d-none d-lg-block">
+                    <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
@@ -100,7 +100,9 @@
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste parcelle</h1>
     </div>
-    <table border='1'>
+    <div class="container">
+    <div class="table-responsive">
+        <table>
         <thead>
             <tr>
                 <th>Numero Parcelle</th>
@@ -112,6 +114,8 @@
         <tbody id="tbody-parcelle">
         </tbody>
     </table>
+    </div>
+</div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -127,7 +131,7 @@
         <div class="container-fluid copyright py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-end">
+                    <div class="col-md-6 offset-md-3 text-center">
                     © ETU 002779 - ETU 002362 - ETU 002669
                     </div>
                 </div>

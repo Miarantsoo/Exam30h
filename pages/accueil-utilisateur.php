@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+    <title>Leaf</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,10 +48,12 @@
                                 <a href="saisie-depense.php" class="dropdown-item">Depenses</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Resultat</a>
+                        <a href="page-resultat.php" class="nav-item nav-link">Resultat</a>
                     </div>
-                    <div class="border-start ps-4 d-none d-lg-block">
+                    <div class="border-start ps-4">
                         <a href="disconnect.php" class="fas fa-times" id="icon"></a>
+                    <div class="border-start ps-4">
+                        <a href="" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>
@@ -79,7 +81,7 @@
     <div class="container-fluid copyright py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-end">
+                <div class="col-md-6 offset-md-3 text-center">
                 © ETU 002779 - ETU 002362 - ETU 002669
                 </div>
             </div>
