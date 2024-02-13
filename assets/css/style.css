@@ -465,6 +465,8 @@
 /*** Footer ***/
 .footer {
     color: #B0B9AE;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer .btn.btn-link {

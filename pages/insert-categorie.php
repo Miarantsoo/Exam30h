@@ -90,7 +90,9 @@
     </div>
 
     <div class="border-top mb-4"></div>
-    
+    <button class="bi bi-arrow-clockwise"></button>
+    <div class="border-top mb-4"></div>
+
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste categorie</h1>
     </div>
@@ -134,7 +136,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center">
-                    © ETU 002779 - ETU 002362 - ETU 002669
+                    © Miarantsoa ETU 002779 - Tsinjo ETU 002362 - Nekena ETU 002669
                     </div>
                 </div>
             </div>
