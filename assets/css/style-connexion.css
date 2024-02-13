@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -5,7 +11,6 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-    font-family: 'Arial', sans-serif;
     background: linear-gradient(rgba(136, 180, 78, .7), rgba(136, 180, 78, .7)), url('../img/carousel-1.jpg') center center no-repeat;
     min-height: 100vh;
 }
@@ -35,7 +40,6 @@ a{
     position: absolute;
     z-index: 100;
     top: 2%;
-    font-family: 'Arial', sans-serif;
     animation: error 1s ease;
 }
 

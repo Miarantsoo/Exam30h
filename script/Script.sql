@@ -1,8 +1,3 @@
-create database exam30h;
-
-use exam30h
-
-
 create table leaf_admin (
     idAdmin int auto_increment,
     nom varchar(50) , 
@@ -10,7 +5,6 @@ create table leaf_admin (
     motDePasse varchar(64),
     primary key(idAdmin)
 )engine=innoDB;
-insert into leaf_admin values (null , 'Jean' , 'jean@gmail.com' , SHA2('0000' , 256));
 
 create table leaf_variete (
     idVariete int auto_increment,
@@ -19,7 +13,6 @@ create table leaf_variete (
     rendement decimal(11,2),
     primary key(idVariete)
 )engine=innoDB;
-insert into leaf_variete values (null , 'variete1' , 1.8 , 2);
 
 create table leaf_parcelle (
     idParcelle int auto_increment,
@@ -29,7 +22,6 @@ create table leaf_parcelle (
     primary key(idParcelle),
     foreign key(idVariete) references leaf_variete(idVariete)
 )engine=innoDB;
-insert into leaf_parcelle values (null , 2362 , 2 , 1);
 
 create table leaf_genre (
     idGenre int auto_increment,
@@ -45,14 +37,12 @@ create table leaf_cueilleur (
     primary key(idCueilleur),
     foreign key(idGenre) references leaf_genre(idGenre)
 )engine=innoDB;
-insert into leaf_cueilleur values (null , 'jeannot' , 1 , '1999-06-15');
 
 create table leaf_categorieDepense (
     idCategorie int auto_increment,
     categorie varchar(50),
     primary key (idCategorie)
 )engine=innoDB;
-insert into leaf_categorieDepense values (null , 'engrais');
 
 create table leaf_salaireCueilleur (
     idSalaire int auto_increment,
@@ -61,7 +51,6 @@ create table leaf_salaireCueilleur (
     primary key (idSalaire),
     foreign key (idCueilleur) references leaf_cueilleur(idCueilleur)
 )engine=innoDB;
-insert into leaf_salaireCueilleur values (null , 1 , 500);
 
 create table leaf_user (
     idUser int auto_increment,
@@ -82,7 +71,6 @@ create table leaf_cueillette (
     foreign key (numeroParcelle) references leaf_parcelle(numeroParcelle),
     constraint nonNull check (poidCueilli>0)
 )engine=innoDB;
-insert into leaf_cueillette values (null , '2024-02-12' , 1 , 2362 , 50);
 
 create table leaf_depense(
     idDepense int auto_increment,
@@ -92,7 +80,6 @@ create table leaf_depense(
     primary key(idDepense),
     foreign key(idCategorie) references leaf_categorieDepense(idCategorie)
 );
-insert into leaf_depense values (null , '2024-02-12' , 1 , 300);
 
 
 create or replace view v_leaf_infoParcelle as
@@ -125,7 +112,6 @@ from v_leaf_infoParcelle
 join v_leaf_sommePoidCueilliParcelle on v_leaf_infoParcelle.numeroParcelle = v_leaf_sommePoidCueilliParcelle.numeroParcelle;
 
 
-INSERT INTO leaf_admin VALUES(null, "Armand", "armand55@itu.mg", sha2("haha", 256));
 
 create or replace view v_leaf_parcelle as
 select 
@@ -180,3 +166,10 @@ select
     leaf_depense.montant
 from leaf_depense
 join leaf_categorieDepense on leaf_depense.idCategorie = leaf_categorieDepense.idCategorie;
+
+
+INSERT INTO leaf_admin VALUES(null, "Michel", "michel@itu.mg", "michel08");
+
+INSERT INTO leaf_admin VALUES(null, "Nicolas", "nico@itu.mg", "nico07");    
+
+INSERT INTO leaf_user VALUES(null, "Miarantsoa", "miarantsoa@itu.mg", "miarantsoa27");    

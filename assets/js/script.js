@@ -4,7 +4,6 @@ const form = document.getElementById("form-admin");
 const body = document.querySelector("body");
 
 console.log(form);
-console.log("hoho");
 
 function showErrors(messageErreur){
     const div = document.createElement("div");
@@ -38,12 +37,14 @@ form.addEventListener("submit",async e => {
     button.appendChild(strong);
     try {
         const data =await submitThenFetchData(form, "traitement-connexion-admin.php");
+        console.log(data+"atay");
         if (data != "Mety") {
             button.innerHTML = "Se Connecter";
             const dataWithoutQuotes = data.replace(/"/g, "");
             showErrors(dataWithoutQuotes);
             button.disabled = false;
         } else {
+            console.log("tay");
             window.location.href = "accueil-admin.php";
         }
     } catch (error) {

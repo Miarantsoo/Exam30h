@@ -17,7 +17,7 @@
     if ($verif == 0) {
         if ($type != 0) {
             $user = verificationUser($email, $mdp);
-            if (!empty($admin)) {
+            if (!empty($user)) {
                 $_SESSION["user"] = $user->nom;
                 echo json_encode("Mety");
             } else {
