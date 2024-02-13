@@ -1,3 +1,20 @@
+<?php
+    $cueillette = 0;
+    $restant = 0;
+    $depense = 0;
+    $revient = 0;
+    $vente = 0;
+    $benefice = 0;
+    if(isset($_GET['resultat'])){
+        // $ensemble = $cueillette.".".$restant.".".$depense.".".$revient;
+        $ensemble = explode("//" , $_GET['resultat']);
+
+        $cueillette = $ensemble[0];
+        $restant = $ensemble[1];
+        $depense = $ensemble[2];
+        $revient = $ensemble[3];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +95,7 @@
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
           <h1 class="display-6">Affiche Resultat</h1>
             </div>
-            <form action="#" class="mt-4">
+            <form action="traitement-dateDebut-dateFin.php" class="mt-4" method="post">
                 <div class="mb-3">
                 <label for="Date">Date début</label>
                 <input type="date" id="" name="date-debut"required>
@@ -107,24 +124,24 @@
   <div class="row mt-4">
     <div class="col-md-4">
       <h2>Global</h2>
-      <p>Poids total de la cueillette: <h4 id="poid-total">500 kg</h4></p>
+      <p>Poids total de la cueillette: <h4 id="poid-total"><?php echo $cueillette;?> Kg</h4></p>
     </div>
     <div class="col-md-4">
       <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
-      <p>Poids restant sur les parcelles à la date de fin: <h4 id="poid-restant">200 kg</h4></p>
+      <p>Poids restant sur les parcelles à la date de fin: <h4 id="poid-restant"><?php echo $restant;?> Kg</h4></p>
     </div>
     <div class="col-md-4">
       <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
-      <p>Montant des ventes: <h4 id="montant-vente">20000</h4></p>
+      <p>Montant des ventes: <h4 id="montant-vente"><?php echo $vente;?> $</h4></p>
     </div>
     <div class="col-md-4">
-      <p>Montant des dépenses: <h4 id="montant-depense">15000</h4></p>
+      <p>Montant des dépenses: <h4 id="montant-depense"><?php echo $depense;?> $</h4></p>
     </div>
     <div class="col-md-4">
-      <p>Bénéfice: <h4 id="benefice">5000</h4></p>
+      <p>Bénéfice: <h4 id="benefice"><?php echo $benefice;?> $</h4></p>
     </div>
     <div class="col-md-4">
-      <p>Coût de revient par kg: <h4 id="cout-revient">25000</h4></p>
+      <p>Coût de revient par kg: <h4 id="cout-revient"><?php echo $revient;?> $</h4></p>
     </div>
   </div>
 </div>
