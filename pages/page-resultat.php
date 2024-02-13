@@ -98,22 +98,36 @@
 <div class="border-top mb-4"></div>
 
 <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-</div>
+          <h1 class="display-6">Résultats de la Récolte</h1>
+            </div>
 
 <div class="container mt-5">
-  <h1>Résultats de la Récolte</h1>
 
+  <div class="container mt-5">
   <div class="row mt-4">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h2>Global</h2>
       <p>Poids total de la cueillette: <h4 id="poid-total">500 kg</h4></p>
+    </div>
+    <div class="col-md-4">
+      <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
       <p>Poids restant sur les parcelles à la date de fin: <h4 id="poid-restant">200 kg</h4></p>
+    </div>
+    <div class="col-md-4">
+      <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
       <p>Montant des ventes: <h4 id="montant-vente">20000</h4></p>
+    </div>
+    <div class="col-md-4">
       <p>Montant des dépenses: <h4 id="montant-depense">15000</h4></p>
+    </div>
+    <div class="col-md-4">
       <p>Bénéfice: <h4 id="benefice">5000</h4></p>
+    </div>
+    <div class="col-md-4">
       <p>Coût de revient par kg: <h4 id="cout-revient">25000</h4></p>
     </div>
   </div>
+</div>
 </div>
 
     <footer>
