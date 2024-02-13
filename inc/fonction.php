@@ -194,8 +194,8 @@
 
     function poidTotalCueillette ($debut , $fin){
         $val = 0;
-        $decalage = debutMoisDeRegeneration ($debut , $fin);
-        $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$decalage' and dateCueillette<='$fin'";
+        $debut = debutMoisDeRegeneration ($debut , $fin);
+        $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$debut' and dateCueillette<='$fin'";
         $con = PDOConnect();
 
         $stmt = $con->query($requete);
@@ -211,9 +211,9 @@
     function poidRestantParcelles($debut , $fin){
         $somme = 0;
 
-        $decalage = debutMoisDeRegeneration ($debut , $fin);
+        $debut = debutMoisDeRegeneration ($debut , $fin);
 
-        $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$decalage' and dateCueillette<='$fin' group by numeroParcelle limit 1";
+        $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$debut' and dateCueillette<='$fin' group by numeroParcelle limit 1";
         
         $val = array();
         $con = PDOConnect();
@@ -231,8 +231,8 @@
 
     function montantDepense ($debut , $fin){
         $val = 0;
-        $decalage = debutMoisDeRegeneration ($debut , $fin);
-        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$decalage' and dateDepense<='$fin'";
+        $debut = debutMoisDeRegeneration ($debut , $fin);
+        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$debut' and dateDepense<='$fin'";
 
         $con = PDOConnect();
 
@@ -257,8 +257,8 @@
 
     function coutRevient ($debut , $fin){
         $val = 0;
-        $decalage = debutMoisDeRegeneration ($debut , $fin);
-        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$decalage' and dateDepense<='$fin'";
+        $debut = debutMoisDeRegeneration ($debut , $fin);
+        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$debut' and dateDepense<='$fin'";
 
         $con = PDOConnect();
 
@@ -282,10 +282,10 @@
     }
 
     function paiements ($debut , $fin){
-        $decalage = debutMoisDeRegeneration ($debut , $fin);
+        $debut = debutMoisDeRegeneration ($debut , $fin);
         $cueilleur = array();
 
-        $date1 = new DateTime($decalage);
+        $date1 = new DateTime($debut);
         $date2 = new DateTime($fin);
 
         $intervale = $date1->diff($date2);
@@ -293,7 +293,7 @@
 
         $ind = 0;
 
-        $requete = "select * from v_leaf_paiementCueilleur where dateCueillette>='$decalage' and dateCueillette<='$fin' group by idCueilleur";
+        $requete = "select * from v_leaf_paiementCueilleur where dateCueillette>='$debut' and dateCueillette<='$fin' group by idCueilleur";
 
         $con = PDOConnect();
 

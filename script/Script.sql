@@ -188,6 +188,7 @@ join leaf_categorieDepense on leaf_depense.idCategorie = leaf_categorieDepense.i
 create or replace view v_leaf_paiementCueilleur as
 select 
     leaf_cueillette.dateCueillette,
+    leaf_cueillette.idCueilleur,
     leaf_cueilleur.nom,
     sum(leaf_cueillette.poidCueilli) as poidTotal,
     leaf_cueilleur.bonus,

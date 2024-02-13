@@ -78,7 +78,7 @@
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
           <h1 class="display-6">Choisir les dates</h1>
             </div>
-            <form action="#" class="mt-4">
+            <form action="traitement-liste-paiement.php" class="mt-4" method="post">
                 <div class="mb-3">
                 <label for="Date">Date début</label>
                 <input type="date" id="" name="date-debut"required>
@@ -115,14 +115,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Date1</td>
-                <td>Cueilleur1</td>
-                <td>Poids</td>
-                <td>2000</td>
-                <td>1000</td>
-                <td>1000</td>
-            </tr>
+            <?php
+                if(isset($_GET['cueilleur'])){
+                    $cueilleurSerialisable = urldecode($_GET['cueilleur']);
+                    $cueilleur = unserialize($cueilleurSerialisable);
+                    foreach($cueilleur as $c){?>
+                        <tr>
+                            <td><?php echo $c->dateCueillette;?></td>
+                            <td><?php echo $c->nom;?></td>
+                            <td><?php echo $c->poidTotal;?></td>
+                            <td><?php echo $c->bonus;?></td>
+                            <td><?php echo $c->mallus;?></td>
+                            <td><?php echo $c->paiement;?></td>
+                        </tr>
+                    <?php }
+                }
+            ?>
         </tbody>
     </table>
     </div>
