@@ -79,7 +79,7 @@
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
           <h1 class="display-6">Affiche Prevision</h1>
             </div>
-            <form action="traitement-dateDebut-dateFin.php" class="mt-4" method="post">
+            <form action="tratement-prevision.php" class="mt-4" method="post">
                 <div class="mb-3">
                 <label for="Date">Date </label>
                 <input type="date" id="" name="date"required>
@@ -115,18 +115,7 @@
         <p>Parcelle 1</p>
         <h3>Nom the 1</h3>
         <p>15.2ha</p>
-        <img src="../assets/img/parcelle1.jpg" alt="Image 1" class="custom-image">
-        <p>Nombre de pied: 62</p>
-        <p>Poids the restant: 500kg</p>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="custom-div">
-        <p>Parcelle 2</p>
-        <h3>Nom the 2</h3>
-        <p>15.2ha</p>
-        <img src="../assets/img/parcelle2.jpg" alt="Image 2" class="custom-image">
+        <img src="../assets/img/parcelle2.jpg" alt="Image 1" class="custom-image">
         <p>Nombre de pied: 62</p>
         <p>Poids the restant: 500kg</p>
       </div>
