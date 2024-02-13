@@ -71,26 +71,33 @@
         </div>
     </div>
 
+    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="display-6">Choisir les Mois de la Saison du Thé</h1>
+    </div>
+
     <div class="container mt-5">
-        <h1>Choisir les Mois de la Saison du Thé</h1>
         <div  class="divcheckbox">
             <form id="" action="#">
-                <div class="row mt-4">
-                    <div class="col-md-2">
-                        <label> Janvier<input type="checkbox" name="mois" value="1"></label><br>
-                        <label> Février<input type="checkbox" name="mois" value="2"></label><br>
-                        <label> Mars<input type="checkbox" name="mois" value="3"></label><br>
-                        <label> Avril<input type="checkbox" name="mois" value="4"></label><br>
-                        <label> Mai<input type="checkbox" name="mois" value="5"></label><br>
-                        <label> Juin<input type="checkbox" name="mois" value="6"></label><br>
+                <div class="row mt-4 boxinitial d-flex flex-column">
+                    <div class="col-md-6">
+                        <div class="box d-flex flex-row justify-content-around gap-3">
+                            <label> Janvier<input type="checkbox" name="mois" value="1"></label><br>
+                            <label> Février<input type="checkbox" name="mois" value="2"></label><br>
+                            <label> Mars<input type="checkbox" name="mois" value="3"></label><br>
+                            <label> Avril<input type="checkbox" name="mois" value="4"></label><br>
+                            <label> Mai<input type="checkbox" name="mois" value="5"></label><br>
+                            <label> Juin<input type="checkbox" name="mois" value="6"></label><br>
+                        </div>
                     </div>
-                    <div class="col-md-2 offset-md-8">
-                        <label> Juillet<input type="checkbox" name="mois" value="7"></label><br>
-                        <label> Août<input type="checkbox" name="mois" value="8"></label><br>
-                        <label> Septembre<input type="checkbox" name="mois" value="9"></label><br>
-                        <label> Octobre<input type="checkbox" name="mois" value="10"></label><br>
-                        <label> Novembre<input type="checkbox" name="mois" value="11"></label><br>
-                        <label> Décembre<input type="checkbox" name="mois" value="12"></label><br>
+                    <div class="col-md-6">
+                        <div class="box d-flex flex-row justify-content-around gap-3" >
+                            <label> Juillet<input type="checkbox" name="mois" value="7"></label><br>
+                            <label> Août<input type="checkbox" name="mois" value="8"></label><br>
+                            <label> Septembre<input type="checkbox" name="mois" value="9"></label><br>
+                            <label> Octobre<input type="checkbox" name="mois" value="10"></label><br>
+                            <label> Novembre<input type="checkbox" name="mois" value="11"></label><br>
+                            <label> Décembre<input type="checkbox" name="mois" value="12"></label><br>
+                        </div>
                     </div>
                 </div>
                 <button type="submit">Valider</button>

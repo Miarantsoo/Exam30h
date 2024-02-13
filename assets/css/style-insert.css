@@ -63,6 +63,7 @@ button{
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: 55px;
 }
 
 .divcheckbox{
@@ -72,19 +73,16 @@ button{
     padding: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding-left: 350px;
 }
 
-.boxcheck{
-    display: flex;
-    align-items: center;
+#page-resultat .col-md-6 {
+    width: 100%; 
 }
 
-#page-resultat .mt-5 {
+.boxinitial{
     display: flex;
-    align-items: center; 
-}
-
-#configuration-saison .row mt-4{
-    display: flex;
-    align-items: center;
+    motion-rotation: reverse;
+    justify-content: space-between
 }
