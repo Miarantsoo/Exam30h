@@ -110,7 +110,7 @@
                 <th>Nom Cueilleur</th>
                 <th>Montant</th>
                 <!-- <th>Rendement</th> -->
-                <th>Acitons</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>

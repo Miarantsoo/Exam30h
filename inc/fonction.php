@@ -209,6 +209,12 @@
             $val += $tab->somme; 
         }
 
+        /*$requete = "select sum(montant) as somme from leaf_salaireCueilleur";
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $val += $tab->somme; 
+        }*/
+
         $poid = poidTotalCueillette($debut , $fin);
 
         $val = $val/$poid;
