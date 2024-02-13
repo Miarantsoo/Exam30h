@@ -94,13 +94,15 @@
 
                         <button type="submit">Inserer</button>
                 </form>
-                <button class="bi bi-arrow-clockwise"></button>
             </div>
         </div>
     </div>
     </div>
 
     <div class="border-top mb-4"></div>
+    <button class="bi bi-arrow-clockwise"></button>
+    <div class="border-top mb-4"></div>
+
 
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste salaire cueilleur</h1>
