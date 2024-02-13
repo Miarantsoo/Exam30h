@@ -76,10 +76,13 @@
                     <a class="nav-link" href="#">To do list</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#">Script</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#">Sheet</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Lien Git</a>
                     </li>
                 </ul>
             </div>
