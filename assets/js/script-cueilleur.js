@@ -39,3 +39,9 @@ form.addEventListener("submit", async e => {
         console.log(error);
     }
 });
+
+
+
+document.getElementById("refresh").onclick = () => {
+    refreshForm(form);
+}

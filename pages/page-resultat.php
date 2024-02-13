@@ -73,7 +73,7 @@
                         <a href="liste-paiement.php" class="nav-item nav-link">Liste paiement cueilleur</a>
                     </div>
                     <div class="border-start ps-4">
-                        <a href="" class="fas fa-times" id="icon"></a>
+                        <a href="disconnect.php" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>

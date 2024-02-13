@@ -89,3 +89,13 @@ export function appendTable(data, table, fileName){
 export function resetTable(tbody){
     tbody.innerHTML = "";
 }
+
+export function refreshForm(form){
+    for (let i = 0; i < form.elements.length; i++) {
+        const element = form.elements[i];
+        if (element.type !== "button" && element.type !== "submit" && element.type !== "reset") {
+            element.value = "";
+        }
+        
+    }
+} 

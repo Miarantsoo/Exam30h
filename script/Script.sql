@@ -19,10 +19,6 @@ create table leaf_variete (
     primary key(idVariete)
 )engine=innoDB;
 insert into leaf_variete values (null , 'variete1' , 1.8 , 2);
-alter table leaf_variete add column prixDeVente decimal(11,2) default 0;
-alter table leaf_cueilleur add column poidMinimal decimal(11,2) default 0;
-alter table leaf_cueilleur add column bonus decimal(11,2) default 0;
-alter table leaf_cueilleur add column mallus decimal(11,2) default 0;
 
 create table leaf_parcelle (
     idParcelle int auto_increment,
@@ -215,3 +211,9 @@ from leaf_cueillette
 join leaf_parcelle 
     on leaf_cueillette.numeroParcelle = leaf_parcelle.numeroParcelle
 join leaf_variete on leaf_parcelle.idVariete = leaf_variete.idVariete;
+
+
+alter table leaf_variete add column prixDeVente decimal(11,2) default 0;
+alter table leaf_cueilleur add column poidMinimal decimal(11,2) default 0;
+alter table leaf_cueilleur add column bonus decimal(11,2) default 0;
+alter table leaf_cueilleur add column mallus decimal(11,2) default 0;

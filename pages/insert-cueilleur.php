@@ -57,7 +57,7 @@
                         <a href="configuration-saison.php" class="nav-item nav-link">Configuration saison</a>
                     </div>
                     <div class="border-start ps-4">
-                        <a href="" class="fas fa-times" id="icon"></a>
+                        <a href="disconnect.php" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>
@@ -111,7 +111,7 @@
     </div>
 
     <div class="border-top mb-4"></div>
-    <button class="bi bi-arrow-clockwise"></button>
+    <button class="bi bi-arrow-clockwise" id="refresh"></button>
     <div class="border-top mb-4"></div>
 
 

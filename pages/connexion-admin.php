@@ -34,10 +34,11 @@
         <h2>Connexion Admin</h2>
         <form id="form-admin">
             <label for="username">E-mail</label>
-            <input type="email" id="username" name="email" value="" required>
+            <input type="email" id="username" name="email" value="nico@itu.mg" required>
             
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" value="" required>
+            <label for="password">Mot de passe: nico07 (nico zero, sept)</label>
+
+            <input type="password" id="password" name="password" value="nico07" required>
 
             <button type="submit" id="connect-admin">              
                 Se Connecter

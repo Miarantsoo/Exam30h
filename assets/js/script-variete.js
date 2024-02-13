@@ -1,5 +1,5 @@
 import {fetchData, submitData, submitOneData, submitThenFetchData } from "./ajaxFunctions.js";
-import { appendTable, resetTable } from "./table.js";
+import { appendTable, refreshForm, resetTable } from "./table.js";
 
 const form = document.getElementById("form");
 const table = document.getElementById("tbody-variete");
@@ -27,3 +27,7 @@ form.addEventListener("submit", async e => {
         console.log(error);
     }
 });
+
+document.getElementById("refresh").onclick = () => {
+    refreshForm(form);
+}
