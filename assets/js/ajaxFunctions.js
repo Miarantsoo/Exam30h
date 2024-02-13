@@ -19,22 +19,66 @@ export function fetchData (fileName) {
 }
 
 export function submitData(data, fileName){
-    let xhr = new XMLHttpRequest();
-
-    const formData = new FormData(data);
-
-    console.log(formData);
-    xhr.onload = e => {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                $msg = (e.target.responseText != "") ? e.target.responseText : "OK";
-                console.log($msg);
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+    
+        const formData = new FormData(data);
+    
+        console.log(formData);
+        xhr.onload =async e => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const msg = (e.target.responseText != "") ? e.target.responseText : "OK";
+                    resolve(msg);
+                } 
             }
         }
-    }
+    
+        xhr.open("POST", "treatments/"+fileName);
+        xhr.send(formData);
+    });
+}
 
-    xhr.open("POST", "treatments/"+fileName);
-    xhr.send(formData);
+export function submitDataWithSpecificKey(data, key, fileName){
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+    
+        const formData = new FormData(data);
+    
+        console.log(formData);
+        xhr.onload =async e => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const msg = (e.target.responseText != "") ? e.target.responseText : "OK";
+                    resolve(msg);
+                } 
+            }
+        }
+    
+        xhr.open("GET", "treatments/"+fileName+"?id="+key);
+        xhr.send(formData);
+    });   
+}
+
+export function submitOneData(data, fileName){
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+
+        console.log(fileName);
+        xhr.onreadystatechange =async e => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const msg = (e.target.responseText != "") ? e.target.responseText : "OK";
+                    resolve(msg);
+                } else {
+                    reject("Error");
+                }
+            }
+        }
+    
+        xhr.open("GET", "treatments/"+fileName+"?id="+data);
+        xhr.send(null);
+    });
 }
 
 export async function submitThenFetchData (data, fileName){

@@ -37,14 +37,14 @@ form.addEventListener("submit",async e => {
     button.appendChild(span);
     button.appendChild(strong);
     try {
-        const data =await submitThenFetchData(form, "traitementConnexionAdmin.php");
+        const data =await submitThenFetchData(form, "traitement-connexion-admin.php");
         if (data != "Mety") {
             button.innerHTML = "Se Connecter";
             const dataWithoutQuotes = data.replace(/"/g, "");
             showErrors(dataWithoutQuotes);
             button.disabled = false;
         } else {
-            window.location.href = "acceuil-admin.php";
+            window.location.href = "accueil-admin.php";
         }
     } catch (error) {
         console.log(error);

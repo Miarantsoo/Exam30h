@@ -40,18 +40,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil-utilisateur.php" class="nav-item nav-link active">Home</a>
+                        <a href="accueil-admin.php" class="nav-item nav-link active">Home</a>
+                        <a href="#" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages de saisie</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
-                                <a href="saisie-cueillette.php" class="dropdown-item">Cueillettes</a>
-                                <a href="saisie-depense.php" class="dropdown-item">Depenses</a>
+                                <a href="insert-variete.php" class="dropdown-item">Variete</a>
+                                <a href="insert-parcelle.php" class="dropdown-item">Parcelle</a>
+                                <a href="insert-cueilleur.php" class="dropdown-item">Cueilleur</a>
+                                <a href="insert-categorie.php" class="dropdown-item">Categorie de depenses</a>
+                                <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Resultat</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
-                        <a href="" class="fas fa-times" id="icon"></a>
+                        <a href="disconnect.php" class="fas fa-times" id="icon"></a>
                     </div>
                 </div>
             </nav>
@@ -60,7 +63,7 @@
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
             <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">Leaf</strong></p>
-            <h1 class="display-1 text-dark mb-4 animated zoomIn">Home User</h1>
+            <h1 class="display-1 text-dark mb-4 animated zoomIn">Home Admin</h1>
         </div>
     </div>
 
@@ -80,7 +83,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end">
-                © ETU 002779 - ETU 002362 - ETU 002669
+                    © ETU 002779 - ETU 002362 - ETU 002669
                 </div>
             </div>
         </div>

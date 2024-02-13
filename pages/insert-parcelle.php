@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
+                        <a href="accueil-admin.php" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
@@ -77,20 +77,19 @@
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Insert parcelle</h1>
     </div>
-    <form action="#">
-            <label for="Nom">Numero parcelle</label>
-            <input type="number" id="numero" name="numero" value="" required>
-            
-            <label for="occupation">Surface</label>
-            <input type="text" id="occupation" name="occupation" value="" required>
+    <form id="form">
+        <input type="hidden" name="id">
+        <label for="Nom">Numero parcelle</label>
+        <input type="number" id="numero" name="numero" value="" required>
+        
+        <label for="occupation">Surface</label>
+        <input type="number" step="any" id="occupation" name="surface" value="" required>
 
-            <label for="variete">Variete</label>
-            <select id="" name="variete" required>
-                    <option value="">variete1</option>
-                    <option value="">variete2</option>
-            </select>
+        <label for="variete">Variete</label>
+        <select id="select" name="variete" required>
+        </select>
 
-            <button type="submit">Inserer</button>
+        <button type="submit">Inserer</button>
     </form>
     </div>
     </div>
@@ -110,17 +109,7 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Numero1</td>
-                <td>Surface1</td>
-                <td>Variete1</td>
-                <td>
-                    <a href="" class="bi bi-trash" id="icon"></a>
-                    &nbsp; &nbsp;  &nbsp;
-                    <a href="" class="bi bi-pencil" id="icon"></a>
-                </td>
-            </tr>
+        <tbody id="tbody-parcelle">
         </tbody>
     </table>
 
@@ -134,16 +123,17 @@
 
     <!-- Template Javascript -->
     <script src="../assets/js/main.js"></script>
-</body>
-<footer>
-    <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-end">
-                © ETU 002779 - ETU 002362 - ETU 002669
+    <footer>
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-end">
+                    © ETU 002779 - ETU 002362 - ETU 002669
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+<script type="module" src="../assets/js/script-parcelle.js"></script>
+</body>
 </html>

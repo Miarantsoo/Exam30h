@@ -42,7 +42,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="acceuil-utilisateur.php" class="nav-item nav-link active">Home</a>
+                        <a href="accueil-utilisateur.php" class="nav-item nav-link active">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages de saisie</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
