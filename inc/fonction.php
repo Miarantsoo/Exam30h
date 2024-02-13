@@ -163,9 +163,39 @@
         return $res[0];
     }
 
+    function insertIntoMoisRegeneration ($mois){
+        $requete = "insert into leaf_regeneration values ";
+        for($i=0 ; $i<count($mois) ; $i++){
+            $requete .= "('2024-".$mois[$i]."-01')";
+            if($i<count($mois)-1){
+                $requete .= ",";
+            }
+        }
+        $con = PDOConnect();
+        $statement = $con->prepare($requete);
+        $statement->execute();
+        $con = null;
+    }
+
+    function debutMoisDeRegeneration ($debut , $fin){
+        $requete = "select * from leaf_regeneration where dateRegeneration>='$debut' and dateRegeneration <= '$fin'";
+        $con = PDOConnect();
+
+        $stmt = $con->query($requete);
+        $val = $debut;
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $val = $tab->dateRegeneration; 
+        }
+
+        $con = null;
+        // echo $val;
+        return $val;
+    }
+
     function poidTotalCueillette ($debut , $fin){
         $val = 0;
-        $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$debut' and dateCueillette<='$fin'";
+        $decalage = debutMoisRegeneration($debut , $fin);
+        $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$decalage' and dateCueillette<='$fin'";
         $con = PDOConnect();
 
         $stmt = $con->query($requete);
@@ -178,11 +208,12 @@
         return $val; 
     }
 
-    function poidRestantParcelles($date){
+    function poidRestantParcelles($debut , $fin){
         $somme = 0;
-        $split  = explode("-" , $date);
-        $debut = $split[0]."-".$split[1]."-"."01";
-        $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$debut' and dateCueillette<='$date' group by numeroParcelle limit 1";
+
+        $decalage = debutMoisRegeneration($debut , $fin);
+
+        $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$decalage' and dateCueillette<='$fin' group by numeroParcelle limit 1";
         
         $val = array();
         $con = PDOConnect();
@@ -198,9 +229,10 @@
         return $somme; 
     }
 
-    function coutDeRevient ($debut , $fin){
+    function montantDepense ($debut , $fin){
         $val = 0;
-        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$debut' and dateDepense<='$fin'";
+        $decalage = debutMoisRegeneration($debut , $fin);
+        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$decalage' and dateDepense<='$fin'";
 
         $con = PDOConnect();
 
@@ -215,6 +247,32 @@
             $val += $tab->somme; 
         }*/
 
+        // $poid = poidTotalCueillette($debut , $fin);
+
+        // $val = $val/$poid;
+
+        // echo $val;
+        return $val;
+    }
+
+    function coutRevient ($debut , $fin){
+        $val = 0;
+        $decalage = debutMoisRegeneration($debut , $fin);
+        $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$decalage' and dateDepense<='$fin'";
+
+        $con = PDOConnect();
+
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $val += $tab->somme; 
+        }
+
+        $requete = "select sum(montant) as somme from leaf_salaireCueilleur";
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $val += $tab->somme; 
+        }
+
         $poid = poidTotalCueillette($debut , $fin);
 
         $val = $val/$poid;
@@ -222,4 +280,40 @@
         // echo $val;
         return $val;
     }
+
+    function paiements ($debut , $fin){
+        $decalage = debutMoisRegeneration($debut , $fin);
+        $cueilleur = array();
+
+        $date1 = new DateTime($decalage);
+        $date2 = new DateTime($fin);
+
+        $intervale = $date1->diff($date2);
+        $nbjour = $intervale->days;
+
+        $ind = 0;
+
+        $requete = "select * from v_leaf_paiementCueilleur where dateCueillette>='$decalage' and dateCueillette<='$fin' group by idCueilleur";
+
+        $con = PDOConnect();
+
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $poidJournalier = $tab->poidTotal/$nbjour;
+            $totalSalaire = ($tab->poidTotal*$tab->montant);
+            if($poidJournalier<$tab->poidMinimal){
+                $totalSalaire = $totalSalaire-($totalSalaire*($tab->mallus/100));
+            }
+            else if($poidJournalier>$tab->poidMinimal){
+                $totalSalaire = $totalSalaire+($totalSalaire*($tab->bonus/100));
+            }
+            $cueilleur[] = $tab;
+            $cueilleur[$ind]->paiement = $totalSalaire;
+            $ind++; 
+        }
+
+        return $cueilleur;
+    }
+
+
 ?>
