@@ -51,6 +51,7 @@
                             </div>
                         </div>
                         <a href="page-resultat.php" class="nav-item nav-link">Resultat</a>
+                        <a href="liste-paiement.php" class="nav-item nav-link">Liste paiement cueilleur</a>
                     </div>
                     <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
@@ -102,9 +103,12 @@
   <div class="row mt-4">
     <div class="col-md-6">
       <h2>Global</h2>
-      <p>Poids total de la cueillette: <h4>500 kg</h4></p>
-      <p>Poids restant sur les parcelles à la date de fin: <h4>200 kg</h4></p>
-      <p>Coût de revient par kg: <h4> $2.50</h4></p>
+      <p>Poids total de la cueillette: <h4 id="poid-total">500 kg</h4></p>
+      <p>Poids restant sur les parcelles à la date de fin: <h4 id="poid-restant">200 kg</h4></p>
+      <p>Montant des ventes: <h4 id="montant-vente">20000</h4></p>
+      <p>Montant des dépenses: <h4 id="montant-depense">15000</h4></p>
+      <p>Bénéfice: <h4 id="benefice">5000</h4></p>
+      <p>Coût de revient par kg: <h4 id="cout-revient">25000</h4></p>
     </div>
   </div>
 </div>
