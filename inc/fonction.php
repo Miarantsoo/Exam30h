@@ -208,7 +208,7 @@
 
     function poidTotalCueillette ($debut , $fin){
         $val = 0;
-        $debut = debutMoisDeRegeneration ($debut , $fin);
+        // $debut = debutMoisDeRegeneration ($debut , $fin);
         $requete = "select sum(poidCueilli) as somme from leaf_cueillette where dateCueillette>='$debut' and dateCueillette<='$fin'";
         $con = PDOConnect();
 
@@ -225,7 +225,7 @@
     function poidRestantParcelles($debut , $fin){
         $somme = 0;
 
-        $debut = debutMoisDeRegeneration ($debut , $fin);
+        // $debut = debutMoisDeRegeneration ($debut , $fin);
 
         $requete = "select * from v_leaf_poidRestantPercelle where dateCueillette>='$debut' and dateCueillette<='$fin' group by numeroParcelle limit 1";
         
@@ -245,7 +245,7 @@
 
     function montantDepense ($debut , $fin){
         $val = 0;
-        $debut = debutMoisDeRegeneration ($debut , $fin);
+        // $debut = debutMoisDeRegeneration ($debut , $fin);
         $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$debut' and dateDepense<='$fin'";
 
         $con = PDOConnect();
@@ -271,7 +271,7 @@
 
     function coutRevient ($debut , $fin){
         $val = 0;
-        $debut = debutMoisDeRegeneration ($debut , $fin);
+        // $debut = debutMoisDeRegeneration ($debut , $fin);
         $requete = "select sum(montant) as somme from leaf_depense where dateDepense>='$debut' and dateDepense<='$fin'";
 
         $con = PDOConnect();
@@ -296,7 +296,7 @@
     }
 
     function paiements ($debut , $fin){
-        $debut = debutMoisDeRegeneration ($debut , $fin);
+        // $debut = debutMoisDeRegeneration ($debut , $fin);
         $cueilleur = array();
 
         $date1 = new DateTime($debut);
@@ -342,5 +342,74 @@
         $con = null;
         // echo $val;
         return $val;
+    }
+
+    function previsionPoidsCueilli ($date){
+        $i=0;
+        $max = array();
+        $requete = "select max(dateCueillette)as somme from leaf_cueillette group by numeroParcelle";
+        $con = PDOConnect();
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $max[] = $tab->somme; 
+        }
+
+        $intervale = 0;
+        $dateComp = new DateTime($date);
+        $previsionRetrait = array();
+
+        $requete = "select datediff(max(dateCueillette),min(dateCueillette)) as differenceJour , sum(poidCueilli) as sommeCueilli from leaf_cueillette group by numeroParcelle";
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $temp = new DateTime($max[$i]);
+            $intervale = $dateComp->diff($temp)->days;
+            $cueilli = ($tab->sommeCueilli/$tab->differenceJour)*$intervale;
+            $previsionRetrait[] = ($tab->sommCueilli)+$cueilli;
+            $i++; 
+        }
+
+        return $previsionRetrait;
+    }
+
+    function previsionPoidsRestant ($date){
+        $i=0;
+        $reste = array();
+        $poidsCueilli = previsionPoidsCueilli($date);
+
+        $requete = "select * from v_leaf_infoParcelle";
+        $con = PDOConnect();
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $reste[] = ($tab->poid)-$poidsCueilli[$i];
+            $i++; 
+        }
+
+        return $reste;
+    }
+
+    function previsionPoidsTotalRestant ($date){
+        $somme = 0;
+        $reste = previsionPoidsRestant($date);
+
+        for($i=0 ; $i<count($reste) ; $i++){
+            $somme += $reste[$i];
+        }
+
+        return $somme;
+    }
+
+    function previsionPrixDeVente($date){
+        $i=0;
+        $somme=0;
+        $reste = previsionPoidsCueilli($date);
+
+        $requete = "select leaf_parcelle.numeroParcelle , leaf_variete.prixDeVente from leaf_parcelle join leaf_variete on leaf_parcelle.idVariete = leaf_variete.idVariete";
+        $con = PDOConnect();
+        $stmt = $con->query($requete);
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $somme += (($tab->prixDeVente)*$reste[$i]);
+            $i++; 
+        }
+        return $somme;
     }
 ?>

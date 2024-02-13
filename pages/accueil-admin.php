@@ -20,8 +20,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -70,6 +70,27 @@
             <h1 class="display-1 text-dark mb-4 animated zoomIn">Home Admin</h1>
         </div>
     </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">To do list</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Script</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Sheet</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Lien Git</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
