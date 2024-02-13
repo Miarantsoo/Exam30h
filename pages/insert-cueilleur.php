@@ -91,14 +91,14 @@
                             <label for="date">Date de naissance</label>
                                 <input type="date" id="dtn" name="date" value="" required>
                             <br>
-                            <label for="date">Date de naissance</label>
-                                <input type="date" id="dtn" name="date" value="" required>
+                            <label for="poid-min">Poids minimal journalier</label>
+                                <input type="text" id="" name="poid-min" value="" required>
                             <br>
-                            <label for="date">Date de naissance</label>
-                                <input type="date" id="dtn" name="date" value="" required>
+                            <label for="bonus">% de bonus</label>
+                                <input type="text" id="" name="bonus" value="" required>
                             <br>
-                            <label for="date">Date de naissance</label>
-                                <input type="date" id="dtn" name="date" value="" required>
+                            <label for="mallus">% de mallus</label>
+                                <input type="text" id="" name="mallus" value="" required>
                             <br>
                             <button type="submit">Inserer</button>
                     </form>
