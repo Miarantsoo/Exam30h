@@ -79,7 +79,7 @@
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
           <h1 class="display-6">Affiche Prevision</h1>
             </div>
-            <form action="tratement-prevision.php" class="mt-4" method="post">
+            <form class="mt-4" id="form">
                 <div class="mb-3">
                 <label for="Date">Date </label>
                 <input type="date" id="" name="date"required>
@@ -111,14 +111,14 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-4">
-      <div class="custom-div">
+      <!-- <div class="custom-div">
         <p>Parcelle 1</p>
         <h3>Nom the 1</h3>
         <p>15.2ha</p>
         <img src="../assets/img/parcelle2.jpg" alt="Image 1" class="custom-image">
         <p>Nombre de pied: 62</p>
         <p>Poids the restant: 500kg</p>
-      </div>
+      </div> -->
     </div>
    </div>
 </div>
@@ -145,6 +145,6 @@
     <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/script-prevision.js"></script>
 </body>
 </html>

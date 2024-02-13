@@ -350,7 +350,7 @@
             $temp = new DateTime($max[$i]);
             $intervale = $dateComp->diff($temp)->days;
             $cueilli = ($tab->sommeCueilli/$tab->differenceJour)*$intervale;
-            $previsionRetrait[] = ($tab->sommCueilli)+$cueilli;
+            $previsionRetrait[] = ($tab->sommeCueilli)+$cueilli;
             $i++; 
         }
 

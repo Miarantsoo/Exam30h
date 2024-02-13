@@ -1,3 +1,8 @@
 <?php
-    include_once("../inc/fonction.php");
+    include("../inc/fonction.php");
+    $date = $_POST['date'];
+
+    $poidsTotal = previsionPoidsTotalRestant($date);
+    $montant = previsionPrixDeVente($date);
+    echo($poidsTotal."//".$montant);
 ?>
