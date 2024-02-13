@@ -1,22 +1,3 @@
-<?php
-    $cueillette = 0;
-    $restant = 0;
-    $vente = 0;
-    $depense = 0;
-    $benefice = 0;
-    $revient = 0;
-    if(isset($_GET['resultat'])){
-        // $ensemble = $cueillette.".".$restant.".".$depense.".".$revient;
-        $ensemble = explode("//" , $_GET['resultat']);
-
-        $cueillette = $ensemble[0];
-        $restant = $ensemble[1];
-        $vente = $ensemble[2];
-        $depense = $ensemble[3];
-        $revient = $ensemble[4];
-        $benefice = $vente-$depense;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +66,7 @@
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-dark mb-4  slideInDown">Resultat Recolte</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Prevision</h1>
             <nav aria-label="breadcrumb animated slideInDown">
             </nav>
         </div>
@@ -96,17 +77,12 @@
     <div class="col-lg-6">
       <div class="form-insert">
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-          <h1 class="display-6">Affiche Resultat</h1>
+          <h1 class="display-6">Affiche Prevision</h1>
             </div>
             <form action="traitement-dateDebut-dateFin.php" class="mt-4" method="post">
                 <div class="mb-3">
-                <label for="Date">Date début</label>
-                <input type="date" id="" name="date-debut"required>
-            </div>
-
-            <div class="mb-3">
-                <label for="Date">Date fin</label>
-                <input type="date" id="" name="date-fin"required>
+                <label for="Date">Date </label>
+                <input type="date" id="" name="date"required>
             </div>
             <button type="submit">Valider</button>
         </form>
@@ -118,37 +94,46 @@
 <div class="border-top mb-4"></div>
 
 <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-          <h1 class="display-6">Résultats de la Récolte</h1>
-            </div>
+    <h1 class="display-6">Informations</h1>
+</div>
 
 <div class="container mt-5">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <p>Poids total de thé restant: <h4 id="poid-total">330 kg</h4></p>
+            </div>
+            <div class="col-md-4">
+                <p>Montant: <h4 id="montant-depense"> 0 Ar</h4></p>
+            </div>
+        </div>
+</div>
 
-  <div class="container mt-5">
-  <div class="row mt-4">
+<div class="container">
+  <div class="row justify-content-center">
     <div class="col-md-4">
-      <h2>Global</h2>
-      <p>Poids total de la cueillette: <h4 id="poid-total"><?php echo $cueillette;?> Kg</h4></p>
+      <div class="custom-div">
+        <p>Parcelle 1</p>
+        <h3>Nom the 1</h3>
+        <p>15.2ha</p>
+        <img src="../assets/img/parcelle1.jpg" alt="Image 1" class="custom-image">
+        <p>Nombre de pied: 62</p>
+        <p>Poids the restant: 500kg</p>
+      </div>
     </div>
+
     <div class="col-md-4">
-      <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
-      <p>Poids restant sur les parcelles à la date de fin: <h4 id="poid-restant"><?php echo $restant;?> Kg</h4></p>
+      <div class="custom-div">
+        <p>Parcelle 2</p>
+        <h3>Nom the 2</h3>
+        <p>15.2ha</p>
+        <img src="../assets/img/parcelle2.jpg" alt="Image 2" class="custom-image">
+        <p>Nombre de pied: 62</p>
+        <p>Poids the restant: 500kg</p>
+      </div>
     </div>
-    <div class="col-md-4">
-      <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
-      <p>Montant des ventes: <h4 id="montant-vente"><?php echo $vente;?> $</h4></p>
-    </div>
-    <div class="col-md-4">
-      <p>Montant des dépenses: <h4 id="montant-depense"><?php echo $depense;?> $</h4></p>
-    </div>
-    <div class="col-md-4">
-      <p>Bénéfice: <h4 id="benefice"><?php echo $benefice;?> $</h4></p>
-    </div>
-    <div class="col-md-4">
-      <p>Coût de revient par kg: <h4 id="cout-revient"><?php echo $revient;?> $</h4></p>
-    </div>
-  </div>
+   </div>
 </div>
-</div>
+
 
     <footer>
         <div class="container-fluid copyright py-4">

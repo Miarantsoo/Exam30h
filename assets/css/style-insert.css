@@ -86,3 +86,16 @@ button{
     motion-rotation: reverse;
     justify-content: space-between
 }
+
+.custom-div {
+    padding: 20px; /* Ajoutez le padding souhaité */
+    border: 1px solid #ddd; /* Ajoutez une bordure pour la décoration */
+    text-align: center; /* Centre le contenu horizontalement dans la div */
+    margin-bottom: 20px; /* Espacement en bas de chaque div */
+  }
+
+  .custom-image {
+    max-width: 100%; /* La largeur maximale de l'image est de 100% de la div parente */
+    height: auto; /* La hauteur s'ajuste automatiquement pour maintenir le rapport hauteur/largeur de l'image */
+    margin-bottom: 10px; /* Espacement en bas de l'image */
+  }

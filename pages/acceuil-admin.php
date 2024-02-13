@@ -20,8 +20,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -68,6 +68,12 @@
             <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">Leaf</strong></p>
             <h1 class="display-1 text-dark mb-4 animated zoomIn">Home Admin</h1>
         </div>
+    </div>
+
+    <div class=""> 
+        <h4> <a href="#">To do</a> </h4>
+        <h4> <a href="#">To do</a> </h4>
+        <h4> <a href="#">To do</a> </h4>
     </div>
 
     <!-- JavaScript Libraries -->
