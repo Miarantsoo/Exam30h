@@ -72,33 +72,39 @@
     </div>
 
     <div class="container">
-    <div class="row">
-        <div class="col-lg-6"> 
-    <div class="form-insert">
-    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Insert cueilleur</h1>
-    </div>
-    <form action="#">
-            <label for="Nom">Nom cueilleur</label>
-            <input type="text" id="nom" name="name" value="" required>
-            <br>
-            
-            <label for="occupation">Genre</label>
-            <select id="" name="genre" required>
-                    <option value="male">Homme</option>
-                    <option value="female">Femme</option>
-            </select>
-            <br>
-
-            <label for="date">Date de naissance</label>
-                <input type="date" id="dtn" name="date" value="" required>
-            <br>
-
-            <button type="submit">Inserer</button>
-    </form>
-    </div>
-    </div>
-    </div>
+        <div class="row">
+            <div class="col-lg-6"> 
+                <div class="form-insert">
+                    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <h1 class="display-6">Insert cueilleur</h1>
+                    </div>
+                    <form action="#">
+                            <label for="Nom">Nom cueilleur</label>
+                            <input type="text" id="nom" name="name" value="" required>
+                            <br>
+                            <label for="occupation">Genre</label>
+                            <select id="" name="genre" required>
+                                    <option value="male">Homme</option>
+                                    <option value="female">Femme</option>
+                            </select>
+                            <br>
+                            <label for="date">Date de naissance</label>
+                                <input type="date" id="dtn" name="date" value="" required>
+                            <br>
+                            <label for="date">Date de naissance</label>
+                                <input type="date" id="dtn" name="date" value="" required>
+                            <br>
+                            <label for="date">Date de naissance</label>
+                                <input type="date" id="dtn" name="date" value="" required>
+                            <br>
+                            <label for="date">Date de naissance</label>
+                                <input type="date" id="dtn" name="date" value="" required>
+                            <br>
+                            <button type="submit">Inserer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -114,6 +120,9 @@
                             <th>Nom Cueilleur</th>
                             <th>Genre</th>
                             <th>Date de Naissance</th>
+                            <th>Poids minimal journalier</th>
+                            <th>% de bonus</th>
+                            <th>% de mallus</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -122,6 +131,9 @@
                             <td>Nom1</td>
                             <td>Occupation1</td>
                             <td>1999-02-15</td>
+                            <td>12000</td>
+                            <td>10</td>
+                            <td>5</td>
                             <td>
                                 <a href="" class="bi bi-trash" id="icon"></a>
                                 &nbsp; &nbsp;  &nbsp;
