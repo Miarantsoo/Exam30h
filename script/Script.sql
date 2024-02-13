@@ -201,3 +201,14 @@ join leaf_salaireCueilleur
     on leaf_cueillette.idCueilleur = leaf_salaireCueilleur.idCueilleur;
 where leaf_cueillette.dateCueillette>'2024-01-31'
 group by leaf_cueillette.idCueilleur;
+
+create or replace view v_leaf_vente as
+select 
+    leaf_cueillette.dateCueillette,
+    leaf_cueillette.numeroParcelle,
+    leaf_cueillette.poidCueilli,
+    sum(leaf_variete.prixDeVente*leaf_cueillette.poidCueilli) as produit
+from leaf_cueillette
+join leaf_parcelle 
+    on leaf_cueillette.numeroParcelle = leaf_parcelle.numeroParcelle
+join leaf_variete on leaf_parcelle.idVariete = leaf_variete.idVariete;

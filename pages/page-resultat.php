@@ -1,18 +1,20 @@
 <?php
     $cueillette = 0;
     $restant = 0;
-    $depense = 0;
-    $revient = 0;
     $vente = 0;
+    $depense = 0;
     $benefice = 0;
+    $revient = 0;
     if(isset($_GET['resultat'])){
         // $ensemble = $cueillette.".".$restant.".".$depense.".".$revient;
         $ensemble = explode("//" , $_GET['resultat']);
 
         $cueillette = $ensemble[0];
         $restant = $ensemble[1];
-        $depense = $ensemble[2];
-        $revient = $ensemble[3];
+        $vente = $ensemble[2];
+        $depense = $ensemble[3];
+        $revient = $ensemble[4];
+        $benefice = $vente-$depense;
     }
 ?>
 <!DOCTYPE html>

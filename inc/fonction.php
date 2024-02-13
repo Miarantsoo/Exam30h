@@ -315,5 +315,18 @@
         return $cueilleur;
     }
 
+    function montantVente ($debut , $fin){
+        $requete = "select * from v_leaf_vente where dateCueillette>='$debut' and dateCueillette<='$fin'";
 
+        $con = PDOConnect();
+        $stmt = $con->query($requete);
+        $val = 0;
+        while($tab = $stmt->fetch(PDO::FETCH_OBJ)){
+            $val += $tab->produit; 
+        }
+
+        $con = null;
+        // echo $val;
+        return $val;
+    }
 ?>
