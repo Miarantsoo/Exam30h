@@ -73,7 +73,7 @@
     </div>
 
     <div class="border-top mb-4"></div>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6"> 
@@ -104,6 +104,7 @@
                                 <input type="text" id="" name="mallus" value="" required>
                             <br>
                             <button type="submit">Inserer</button>
+                            <button class="bi bi-arrow-clockwise"></button>
                     </form>
                 </div>
             </div>
