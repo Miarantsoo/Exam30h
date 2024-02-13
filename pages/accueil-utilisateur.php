@@ -75,16 +75,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                    <a class="nav-link" href="#">To do list</a>
+                    <a class="nav-link" href="https://docs.google.com/spreadsheets/d/1SiW3vH_ktSI2DzucyGjeC0rvmAZjDAD8dkJP0TgEdvE/edit?usp=sharing">To do list / Timesheet</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Script</a>
+                    <a class="nav-link" href="https://docs.google.com/document/d/1UNyY7OCpSZx5xx2ZD_AaJIMXXIbQRk27-ZTu_sFlpYQ/edit?usp=sharing">Script</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Sheet</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Lien Git</a>
+                    <a class="nav-link" href="https://github.com/Miarantsoo/Exam30h">Lien Git</a>
                     </li>
                 </ul>
             </div>
