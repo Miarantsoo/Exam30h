@@ -51,6 +51,7 @@
                             </div>
                         </div>
                         <a href="page-resultat.php" class="nav-item nav-link">Resultat</a>
+                        <a href="liste-paiement.php" class="nav-item nav-link">Liste paiement cueilleur</a>
                     </div>
                     <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
@@ -59,6 +60,8 @@
             </nav>
         </div>
     </div>
+
+    <div class="border-top mb-4"></div>
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">

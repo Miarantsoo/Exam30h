@@ -28,6 +28,7 @@
 
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/style-insert.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container-fluid bg-white sticky-top" style="top: -150px;">
@@ -41,8 +42,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="accueil-admin.php" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
+                        <a href="acceuil-admin.php" class="nav-item nav-link active">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages Insertion</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
@@ -65,47 +65,45 @@
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-dark mb-4  slideInDown">Categorie de depenses</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Configuration Saison</h1>
             <nav aria-label="breadcrumb animated slideInDown">
             </nav>
         </div>
     </div>
 
-    <div class="border-top mb-4"></div>
+    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="display-6">Choisir les Mois de la Saison du Thé</h1>
+    </div>
 
-    <div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-        <div class="form-insert">
-            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                <h1 class="display-6">Insert categorie</h1>
-            </div>
-            <form id="form">
-                <input type="hidden" name="id">
-                    <label for="Nom">Nom categorie</label>
-                    <input type="text" id="categorie" name="categorie" value="" require>
-                    <button type="submit">Inserer</button>
+    <div class="container mt-5">
+        <div  class="divcheckbox">
+            <form id="" action="traitement-Mois-Regeneration.php" method="post">
+                <div class="row mt-4 boxinitial d-flex flex-column">
+                    <div class="col-md-6">
+                        <div class="box d-flex flex-row justify-content-around gap-3">
+                            <label> Janvier<input type="checkbox" name="mois[]" value="1"></label><br>
+                            <label> Février<input type="checkbox" name="mois[]" value="2"></label><br>
+                            <label> Mars<input type="checkbox" name="mois[]" value="3"></label><br>
+                            <label> Avril<input type="checkbox" name="mois[]" value="4"></label><br>
+                            <label> Mai<input type="checkbox" name="mois[]" value="5"></label><br>
+                            <label> Juin<input type="checkbox" name="mois[]" value="6"></label><br>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box d-flex flex-row justify-content-around gap-3" >
+                            <label> Juillet<input type="checkbox" name="mois[]" value="7"></label><br>
+                            <label> Août<input type="checkbox" name="mois[]" value="8"></label><br>
+                            <label> Septembre<input type="checkbox" name="mois[]" value="9"></label><br>
+                            <label> Octobre<input type="checkbox" name="mois[]" value="10"></label><br>
+                            <label> Novembre<input type="checkbox" name="mois[]" value="11"></label><br>
+                            <label> Décembre<input type="checkbox" name="mois[]" value="12"></label><br>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Valider</button>
             </form>
         </div>
     </div>
-    </div>
-    </div>
-
-    <div class="border-top mb-4"></div>
-    
-    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Liste categorie</h1>
-    </div>
-    <table border='1'>
-        <thead>
-            <tr>
-                <th>Nom categorie</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="tbody-categorie">
-        </tbody>
-    </table>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -128,7 +126,5 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="../assets/js/script-categorie.js"></script>
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>

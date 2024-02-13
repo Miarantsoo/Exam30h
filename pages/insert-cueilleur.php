@@ -54,6 +54,7 @@
                                 <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
+                        <a href="configuration-saison.php" class="nav-item nav-link">Configuration saison</a>
                     </div>
                     <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
@@ -71,35 +72,45 @@
         </div>
     </div>
 
+    <div class="border-top mb-4"></div>
+    
     <div class="container">
-    <div class="row">
-        <div class="col-lg-6"> 
-    <div class="form-insert">
-    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Insert cueilleur</h1>
+        <div class="row">
+            <div class="col-lg-6"> 
+                <div class="form-insert">
+                    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <h1 class="display-6">Insert cueilleur</h1>
+                    </div>
+                    <form action="#">
+                            <label for="Nom">Nom cueilleur</label>
+                            <input type="text" id="nom" name="name" value="" required>
+                            <br>
+                            <label for="genre">Genre</label>
+                            <select id="select-genre" name="genre" required>
+                                    <option value="male">Homme</option>
+                                    <option value="female">Femme</option>
+                            </select>
+                            <br>
+                            <label for="date">Date de naissance</label>
+                                <input type="date" id="dtn" name="date" value="" required>
+                            <br>
+                            <label for="poid-min">Poids minimal journalier</label>
+                                <input type="text" id="" name="poid-min" value="" required>
+                            <br>
+                            <label for="bonus">% de bonus</label>
+                                <input type="text" id="" name="bonus" value="" required>
+                            <br>
+                            <label for="mallus">% de mallus</label>
+                                <input type="text" id="" name="mallus" value="" required>
+                            <br>
+                            <button type="submit">Inserer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <form id="form">
-        <input type="hidden" name="id">
-        <label for="Nom">Nom cueilleur</label>
-        <input type="text" id="nom" name="name" value="" required>
-        <br>
-        
-        <label for="occupation">Genre</label>
-        <select id="select-genre" name="genre" required>
-        </select>
-        <br>
 
-        <label for="date">Date de naissance</label>
-            <input type="date" id="dtn" name="date" value="" required>
-        <br>
-
-        <button type="submit">Inserer</button>
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
-
+    <div class="border-top mb-4"></div>
 
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste cueilleur</h1>
@@ -110,6 +121,9 @@
                 <th>Nom cueilleur</th>
                 <th>Genre</th>
                 <th>Date de naissance</th>
+                <th>Poids minimal journalier</th>
+                <th>% de bonus</th>
+                <th>% de mallus</th>
                 <th>Actions</th>
             </tr>
         </thead>

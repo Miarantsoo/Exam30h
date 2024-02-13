@@ -1,3 +1,8 @@
+create table leaf_regeneration (
+    dateRegeneration date unique
+);
+insert into leaf_regeneration values ('2024-01-01'),('2024-02-01');
+
 create table leaf_admin (
     idAdmin int auto_increment,
     nom varchar(50) , 
@@ -13,6 +18,8 @@ create table leaf_variete (
     rendement decimal(11,2),
     primary key(idVariete)
 )engine=innoDB;
+insert into leaf_variete values (null , 'variete1' , 1.8 , 2);
+alter table leaf_variete add column prixDeVente decimal(11,2) default 0;
 
 create table leaf_parcelle (
     idParcelle int auto_increment,
@@ -95,6 +102,8 @@ join leaf_variete
     on leaf_parcelle.idVariete = leaf_variete.idVariete;
 
 
+
+
 create or replace view v_leaf_sommePoidCueilliParcelle as
 select 
     sum(leaf_cueillette.poidCueilli) as sommePoid,
@@ -172,4 +181,33 @@ INSERT INTO leaf_admin VALUES(null, "Michel", "michel@itu.mg", "michel08");
 
 INSERT INTO leaf_admin VALUES(null, "Nicolas", "nico@itu.mg", "nico07");    
 
-INSERT INTO leaf_user VALUES(null, "Miarantsoa", "miarantsoa@itu.mg", "miarantsoa27");    
+INSERT INTO leaf_user VALUES(null, "Miarantsoa", "miarantsoa@itu.mg", "miarantsoa27");   
+
+
+create or replace view v_leaf_paiementCueilleur as
+select 
+    leaf_cueillette.dateCueillette,
+    leaf_cueilleur.nom,
+    sum(leaf_cueillette.poidCueilli) as poidTotal,
+    leaf_cueilleur.bonus,
+    leaf_cueilleur.mallus,
+    leaf_cueilleur.poidMinimal,
+    leaf_salaireCueilleur.montant
+from leaf_cueillette 
+join leaf_cueilleur 
+    on leaf_cueillette.idCueilleur = leaf_cueilleur.idCueilleur
+join leaf_salaireCueilleur
+    on leaf_cueillette.idCueilleur = leaf_salaireCueilleur.idCueilleur;
+where leaf_cueillette.dateCueillette>'2024-01-31'
+group by leaf_cueillette.idCueilleur;
+
+create or replace view v_leaf_vente as
+select 
+    leaf_cueillette.dateCueillette,
+    leaf_cueillette.numeroParcelle,
+    leaf_cueillette.poidCueilli,
+    sum(leaf_variete.prixDeVente*leaf_cueillette.poidCueilli) as produit
+from leaf_cueillette
+join leaf_parcelle 
+    on leaf_cueillette.numeroParcelle = leaf_parcelle.numeroParcelle
+join leaf_variete on leaf_parcelle.idVariete = leaf_variete.idVariete;

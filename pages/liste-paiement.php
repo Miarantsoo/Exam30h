@@ -1,22 +1,3 @@
-<?php
-    $cueillette = 0;
-    $restant = 0;
-    $vente = 0;
-    $depense = 0;
-    $benefice = 0;
-    $revient = 0;
-    if(isset($_GET['resultat'])){
-        // $ensemble = $cueillette.".".$restant.".".$depense.".".$revient;
-        $ensemble = explode("//" , $_GET['resultat']);
-
-        $cueillette = $ensemble[0];
-        $restant = $ensemble[1];
-        $vente = $ensemble[2];
-        $depense = $ensemble[3];
-        $revient = $ensemble[4];
-        $benefice = $vente-$depense;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +65,7 @@
 
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-dark mb-4  slideInDown">Resultat Recolte</h1>
+            <h1 class="display-2 text-dark mb-4  slideInDown">Liste des paiements pour les cueilleurs</h1>
             <nav aria-label="breadcrumb animated slideInDown">
             </nav>
         </div>
@@ -95,9 +76,9 @@
     <div class="col-lg-6">
       <div class="form-insert">
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-          <h1 class="display-6">Affiche Resultat</h1>
+          <h1 class="display-6">Choisir les dates</h1>
             </div>
-            <form action="traitement-dateDebut-dateFin.php" class="mt-4" method="post">
+            <form action="#" class="mt-4">
                 <div class="mb-3">
                 <label for="Date">Date début</label>
                 <input type="date" id="" name="date-debut"required>
@@ -117,36 +98,34 @@
 <div class="border-top mb-4"></div>
 
 <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-          <h1 class="display-6">Résultats de la Récolte</h1>
-            </div>
-
-<div class="container mt-5">
-
-  <div class="container mt-5">
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <h2>Global</h2>
-      <p>Poids total de la cueillette: <h4 id="poid-total"><?php echo $cueillette;?> Kg</h4></p>
-    </div>
-    <div class="col-md-4">
-      <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
-      <p>Poids restant sur les parcelles à la date de fin: <h4 id="poid-restant"><?php echo $restant;?> Kg</h4></p>
-    </div>
-    <div class="col-md-4">
-      <h2>&nbsp;</h2> <!-- Ajoutez une colonne vide pour l'espace -->
-      <p>Montant des ventes: <h4 id="montant-vente"><?php echo $vente;?> $</h4></p>
-    </div>
-    <div class="col-md-4">
-      <p>Montant des dépenses: <h4 id="montant-depense"><?php echo $depense;?> $</h4></p>
-    </div>
-    <div class="col-md-4">
-      <p>Bénéfice: <h4 id="benefice"><?php echo $benefice;?> $</h4></p>
-    </div>
-    <div class="col-md-4">
-      <p>Coût de revient par kg: <h4 id="cout-revient"><?php echo $revient;?> $</h4></p>
-    </div>
-  </div>
+    <h1 class="display-6">Liste</h1>
 </div>
+
+<div class="container">
+    <div class="table-responsive">
+        <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Non Cueilleur</th>
+                <th>Poids</th>
+                <th>%bonus</th>
+                <th>%mallus</th>
+                <th>Montant paiement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Date1</td>
+                <td>Cueilleur1</td>
+                <td>Poids</td>
+                <td>2000</td>
+                <td>1000</td>
+                <td>1000</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 </div>
 
     <footer>

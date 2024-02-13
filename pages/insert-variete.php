@@ -54,6 +54,7 @@
                                 <a href="insert-salaire-cueilleur.php" class="dropdown-item">Salaire Cueilleur</a>
                             </div>
                         </div>
+                        <a href="configuration-saison.php" class="nav-item nav-link">Configuration saison</a>
                     </div>
                     <div class="border-start ps-4">
                         <a href="" class="fas fa-times" id="icon"></a>
@@ -70,6 +71,8 @@
             </nav>
         </div>
     </div>
+
+    <div class="border-top mb-4"></div>
 
     <div class="container">
     <div class="row">
@@ -91,7 +94,12 @@
 
                 <div class="mb-3">
                     <label for="rendement">Rendement</label>
-                    <input type="number" step="any" id="password" name="rendement" value="" required>
+                    <input type="text" id="" name="rendement" value="" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="prix-vente">Prix de vente</label>
+                    <input type="text" id="" name="prix-vente" value="" required>
                 </div>
 
                     <button type="submit">Inserer</button>
@@ -100,6 +108,8 @@
         </div>
     </div>
     </div>
+
+    <div class="border-top mb-4"></div>
 
     <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <h1 class="display-6">Liste variete</h1>
@@ -112,6 +122,7 @@
                         <th>Nom variété</th>
                         <th>Occupation</th>
                         <th>Rendement</th>
+                        <th>Prix de vente</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
