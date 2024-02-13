@@ -31,7 +31,7 @@ form.addEventListener("submit",async e => {
     span.classList.add("spinner-border-sm");
     span.role = "status";
     span.ariaHidden = "true";
-    const strong = document.createElement("strong");
+    const strong = document.createElement("strong");     
     strong.innerHTML = "  Loading...";
     button.appendChild(span);
     button.appendChild(strong);
@@ -51,3 +51,17 @@ form.addEventListener("submit",async e => {
         console.log(error);
     }
 });
+
+function change() {
+    var eyeIcon = document.getElementsByName('eye')[0];
+    var pwd = document.getElementsByName('pwd')[0];
+    if (eyeIcon.classList.contains('glyphicon-eye-open')) {
+        eyeIcon.classList.remove('glyphicon-eye-open');
+        eyeIcon.classList.add('glyphicon-eye-close');
+        pwd.type = 'password';
+    } else {
+        eyeIcon.classList.remove('glyphicon-eye-close');
+        eyeIcon.classList.add('glyphicon-eye-open');
+        pwd.type = 'text';
+    }
+}
