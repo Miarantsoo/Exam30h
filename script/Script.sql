@@ -1,3 +1,8 @@
+create table leaf_regeneration (
+    dateRegeneration date unique
+);
+insert into leaf_regeneration values ('2024-01-01'),('2024-02-01');
+
 create table leaf_admin (
     idAdmin int auto_increment,
     nom varchar(50) , 
@@ -15,6 +20,7 @@ create table leaf_variete (
     primary key(idVariete)
 )engine=innoDB;
 insert into leaf_variete values (null , 'variete1' , 1.8 , 2);
+alter table leaf_variete add column prixDeVente decimal(11,2) default 0;
 
 create table leaf_parcelle (
     idParcelle int auto_increment,
@@ -41,6 +47,9 @@ create table leaf_cueilleur (
     foreign key(idGenre) references leaf_genre(idGenre)
 )engine=innoDB;
 insert into leaf_cueilleur values (null , 'jeannot' , 1 , '1999-06-15');
+alter table leaf_cueilleur add column poidMinimal decimal(11,2) default 0;
+alter table leaf_cueilleur add column bonus decimal(11,2) default 0;
+alter table leaf_cueilleur add column mallus decimal(11,2) default 0;
 
 create table leaf_categorieDepense (
     idCategorie int auto_increment,
@@ -101,6 +110,8 @@ select
 from leaf_parcelle
 join leaf_variete 
     on leaf_parcelle.idVariete = leaf_variete.idVariete;
+
+
 
 
 create or replace view v_leaf_sommePoidCueilliParcelle as
@@ -173,3 +184,20 @@ select
     leaf_depense.montant
 from leaf_depense
 join leaf_categorieDepense on leaf_depense.idCategorie = leaf_categorieDepense.idCategorie;
+
+create or replace view v_leaf_paiementCueilleur as
+select 
+    leaf_cueillette.dateCueillette,
+    leaf_cueilleur.nom,
+    sum(leaf_cueillette.poidCueilli) as poidTotal,
+    leaf_cueilleur.bonus,
+    leaf_cueilleur.mallus,
+    leaf_cueilleur.poidMinimal,
+    leaf_salaireCueilleur.montant
+from leaf_cueillette 
+join leaf_cueilleur 
+    on leaf_cueillette.idCueilleur = leaf_cueilleur.idCueilleur
+join leaf_salaireCueilleur
+    on leaf_cueillette.idCueilleur = leaf_salaireCueilleur.idCueilleur;
+where leaf_cueillette.dateCueillette>'2024-01-31'
+group by leaf_cueillette.idCueilleur;
