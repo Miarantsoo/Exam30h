@@ -1,0 +1,17 @@
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    margin-bottom: 60px; /* Hauteur du footer */
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Couleur de fond du footer, changez selon vos préférences */
+    padding: 10px 0; /* Espacement intérieur du footer */
+  }
+  

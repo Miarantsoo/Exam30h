@@ -190,6 +190,7 @@ INSERT INTO leaf_user VALUES(null, "Miarantsoa", "miarantsoa@itu.mg", "miarantso
 create or replace view v_leaf_paiementCueilleur as
 select 
     leaf_cueillette.dateCueillette,
+    leaf_cueillette.idCueilleur,
     leaf_cueilleur.nom,
     sum(leaf_cueillette.poidCueilli) as poidTotal,
     leaf_cueilleur.bonus,
