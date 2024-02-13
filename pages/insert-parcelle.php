@@ -75,29 +75,29 @@
     <div class="container">
     <div class="row">
         <div class="col-lg-6">
-    <div class="form-insert">
-    <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-        <h1 class="display-6">Insert parcelle</h1>
-    </div>
-    <form action="#">
-            <label for="Nom">Numero parcelle</label>
-            <input type="number" id="numero" name="numero" value="" required>
-            
-            <label for="occupation">Surface</label>
-            <input type="text" id="occupation" name="occupation" value="" required>
+        <div class="form-insert">
+            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <h1 class="display-6">Insert parcelle</h1>
+            </div>
+                    <form action="#">
+                            <label for="Nom">Numero parcelle</label>
+                            <input type="number" id="numero" name="numero" value="" required>
+                            
+                            <label for="occupation">Surface</label>
+                            <input type="text" id="occupation" name="occupation" value="" required>
 
-            <label for="variete">Variete</label>
-            <select id="" name="variete" required>
-                    <option value="">variete1</option>
-                    <option value="">variete2</option>
-            </select>
+                            <label for="variete">Variete</label>
+                            <select id="" name="variete" required>
+                                    <option value="">variete1</option>
+                                    <option value="">variete2</option>
+                            </select>
 
-            <button type="submit">Inserer</button>
-            <button class="bi bi-arrow-clockwise"></button>
-    </form>
-    </div>
-    </div>
-    </div>
+                            <button type="submit">Inserer</button> 
+                    </form>
+                    <button class="bi bi-arrow-clockwise"></button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="border-top mb-4"></div>

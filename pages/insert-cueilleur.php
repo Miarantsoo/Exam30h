@@ -103,8 +103,8 @@
                                 <input type="text" id="" name="mallus" value="" required>
                             <br>
                             <button type="submit">Inserer</button>
-                            <button class="bi bi-arrow-clockwise"></button>
                     </form>
+                    <button class="bi bi-arrow-clockwise"></button>
                 </div>
             </div>
         </div>
